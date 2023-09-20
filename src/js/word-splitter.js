@@ -8,6 +8,14 @@ export class WordSplitter {
   constructor() {
   }
 
+  // check if input contains multiple words
+  checkIfMultipleWords (stringToCheck) {
+    let allWords = this.separateWords(stringToCheck)
+    if (allWords.length > 1){
+      return true // this could be rewritten
+    }
+  }
+
   // used to seperate the words based on spaces
   separateWords (stringOfWords) {
     let allWords = stringOfWords.split(' ') // splits for each space
