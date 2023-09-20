@@ -8,7 +8,12 @@ export class WordSplitter {
   constructor() {
   }
 
-  // check if input contains multiple words
+  /**
+   * Checks if there are spaces in the string and returns a true if there are multiple words.
+   *
+   * @param {String} stringToCheck
+   * @return {Boolean}
+   */
   checkIfMultipleWords (stringToCheck) {
     let allWords = this.separateWords(stringToCheck)
     if (allWords.length > 1){
@@ -16,13 +21,38 @@ export class WordSplitter {
     }
   }
 
-  // used to seperate the words based on spaces
+  /**
+   * Separates words based on spaces, but removes words that are only blank spaces.
+   *
+   * @param {String} stringOfWords
+   * @return {Array} allWords as an array
+   */
   separateWords (stringOfWords) {
     let allWords = stringOfWords.split(' ') // splits for each space
+    allWords = this.clearEverythingButLetters(allWords)
+    allWords = allWords.filter(word => word.trim() !== '')
     return allWords
   }
 
-  // used to seperate letters in a word
+  /**
+   * Removes all characters except letters and replace them with a blank space.
+   *
+   * @param {Array} allWords array of all words
+   * @return {Array} copy of allWords but without unwanted characters
+   */
+  clearEverythingButLetters(allWords) {
+    const cleanedWords = allWords.map(word => {
+      return word.replace(/[^a-zA-ZåäöÅÄÖ]/g, "")
+    })
+    return cleanedWords
+  }
+
+  /**
+   * Separates each letter in a word.
+   *
+   * @param {String} word
+   * @return {Array} allLetters separated into individual array-elements.
+   */
   separateLetters (word) {
     let allLetters = word.split('')
     return allLetters

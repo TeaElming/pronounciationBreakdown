@@ -8,10 +8,10 @@ const wordsToTry = ['cool', 'citron', 'går', 'gör', 'kul', 'kär', 'skor', 'sk
   console.log(`The initial phonic sound for the word ${word} is: '${initialPhonicSound}'.`)
 })*/
 
-const longerSentence = 'En katt med skor kör en en skön bil genom Skärholmen'
+const longerSentence = 'En   katt med skor kör en en skön bil !! genom Skärholmen'
 
 const sentencePhonicsChecker = new SwedishPhonicsChecker(longerSentence)
-const allIdentifiedWords = sentencePhonicsChecker.checkNumberOfWordsInString()
+const allIdentifiedWords = sentencePhonicsChecker.returnAllWordsInString()
 
 if (allIdentifiedWords.length > 1) {
   allIdentifiedWords.forEach((word) => {

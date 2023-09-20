@@ -1,5 +1,10 @@
 import { WordSplitter } from "./word-splitter.js"
-
+/**
+ * Identifies the pronunciation of intial consonant sounds in Swedish.
+ *
+ * @export
+ * @class ConsonantSoundIdentifier
+ */
 export class ConsonantSoundIdentifier {
   constructor() {
     this.hardVowels = ['a', 'o', 'u', 'å']
@@ -8,7 +13,14 @@ export class ConsonantSoundIdentifier {
   }
 
 
-  // checks different cases depending on first letters
+  /**
+   * Runs through the initial consonant sounds of a word to identify potential phonetic differences.
+   * Based of the standard rules. Exceptions occur and are not accounted for.
+   *
+   * @param {String} word
+   * @return {String} consonantSound - gives the phonetic consonant sound of the word
+   * @memberof ConsonantSoundIdentifier
+   */
   identifyConsonantSound(word) {
     const identifiedLetters = this.wordSplitter.separateLetters(word.toLowerCase())
     let consonantSound = identifiedLetters[0] // initially set first consonant sound to first letter
@@ -47,6 +59,13 @@ export class ConsonantSoundIdentifier {
     return consonantSound
   }
 
+  /**
+   * Rewrites a word with the phonetic consonant sound if required.
+   *
+   * @param {String} word
+   * @return {String} phoneticallySpelledWord - the word which has been phonetically spelled.
+   * @memberof ConsonantSoundIdentifier
+   */
   rewritePhonetically (word) {
     const identifiedConsonantSound = this.identifyConsonantSound(word.toLowerCase())
     const identifiedLetters = this.wordSplitter.separateLetters(word.toLowerCase())
@@ -63,5 +82,4 @@ export class ConsonantSoundIdentifier {
 
     return phoneticallySpelledWord
   }
-
 }
