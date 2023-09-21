@@ -1,4 +1,4 @@
-import { WordSplitter } from "./word-splitter.js"
+import { WordSplitter } from "../word-splitter.js"
 /**
  * Identifies the pronunciation of intial consonant sounds in Swedish.
  *

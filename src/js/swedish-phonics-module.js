@@ -1,5 +1,6 @@
-import { ConsonantSoundIdentifier } from "./consonant-sound-identifier.js"
-import { WordSplitter } from "./word-splitter.js"
+import { ConsonantSoundIdentifier } from "./components/consonant-sounds/consonant-sound-identifier.js"
+import { WordSplitter } from "./components/word-splitter.js"
+import { VowelSoundIdentifier } from "./components/vowel-sounds/vowel-sound-identifier.js"
 
 /**
  * Swedish Phonics checker which allows the user to manipulate a string.
@@ -16,6 +17,7 @@ export class SwedishPhonicsChecker {
   constructor(wordToCheck) {
     this.wordToCheck = wordToCheck
     this.consonantSoundIdentifier = new ConsonantSoundIdentifier()
+    this.vowelSoundIdentifier = new VowelSoundIdentifier()
     this.wordSplitter = new WordSplitter()
   }
 
@@ -48,8 +50,27 @@ export class SwedishPhonicsChecker {
    *
    * @return {String}
    */
-  phoneticSpelling () {
+  phoneticConsonantSpelling() {
     return this.consonantSoundIdentifier.rewritePhonetically(this.wordToCheck)
+  }
+
+  /**
+   * Provides the vowel sounds included in a word.
+   * Long vowel sounds will be capitalised, while short ones remain lower case.
+   *
+   * @return {Array} the identified vowelsounds are returned as an array.
+   */
+  returnAllVowelSounds() {
+    return this.vowelSoundIdentifier.identifyVowelSounds(this.wordToCheck)
+  }
+
+  /**
+   * Provides the word rewritten to capitalise vowels that have a long vowel sound.
+   *
+   * @return {String}
+   */
+  phoneticVowelSpelling() {
+    return this.vowelSoundIdentifier.rewriteWithIdentifiedVowelSound(this.wordToCheck)
   }
 
 

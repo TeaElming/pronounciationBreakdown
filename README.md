@@ -13,3 +13,13 @@ The following consonant sounds are affected by the soft vowels: C, G, K, SK
 ## Hard/Soft vowels
 Hard vowels: A, O, U, Å
 Soft vowels: E, I, Y, Ä, Ö
+
+# USAGE
+The user should be able to use the module by only interacting with the file called 'swedish-phonics-module.js'.
+
+
+# TESTING
+In the folder 'test-app' there is a file called 'test-app-index.js'. By running this file, it is possible to test the features of the module.
+
+# ISSUES
+- Illegal character in a word - blank space

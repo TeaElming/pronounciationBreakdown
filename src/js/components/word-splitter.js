@@ -29,10 +29,13 @@ export class WordSplitter {
    */
   separateWords (stringOfWords) {
     let allWords = stringOfWords.split(' ') // splits for each space
-    allWords = this.clearEverythingButLetters(allWords)
-    allWords = allWords.filter(word => word.trim() !== '')
-    return allWords
+    let cleanedWords = allWords.map(word => {
+      return this.clearEverythingButLetters(word)
+    })
+    cleanedWords = cleanedWords.filter(word => word.trim() !== '')
+    return cleanedWords
   }
+
 
   /**
    * Removes all characters except letters and replace them with a blank space.
@@ -40,11 +43,8 @@ export class WordSplitter {
    * @param {Array} allWords array of all words
    * @return {Array} copy of allWords but without unwanted characters
    */
-  clearEverythingButLetters(allWords) {
-    const cleanedWords = allWords.map(word => {
-      return word.replace(/[^a-zA-ZåäöÅÄÖ]/g, "")
-    })
-    return cleanedWords
+  clearEverythingButLetters(word) {
+      return word.replace(/[^a-zA-ZåäöÅÄÖ]/g, " ")
   }
 
   /**
@@ -54,6 +54,7 @@ export class WordSplitter {
    * @return {Array} allLetters separated into individual array-elements.
    */
   separateLetters (word) {
+    this.clearEverythingButLetters(word)
     let allLetters = word.split('')
     return allLetters
   }
