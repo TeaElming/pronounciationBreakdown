@@ -6,7 +6,7 @@ function testConsonantSoundIndividualWords() {
 
   wordsToTry.forEach((word) => {
     const phonicsChecker = new SwedishPhonicsChecker(word)
-    const initialPhonicSound = phonicsChecker.returnInitialPhonicSound(word)
+    const initialPhonicSound = phonicsChecker.returnInitialConsonantSound(word)
     console.log(`The initial phonic sound for the word ${word} is: '${initialPhonicSound}'.`)
   })
 }
@@ -20,13 +20,13 @@ function testConsonantSoundSentence() {
   if (allIdentifiedWords.length > 1) {
     allIdentifiedWords.forEach((word) => {
       const phonicsChecker = new SwedishPhonicsChecker(word)
-      const initialPhonicSound = phonicsChecker.returnInitialPhonicSound()
+      const initialPhonicSound = phonicsChecker.returnInitialConsonantSound()
       const phoneticSpelling = phonicsChecker.phoneticConsonantSpelling()
       console.log(`The initial phonic sound for the word ${word} is: '${initialPhonicSound}' and is pronounced ${phoneticSpelling}.`)
     })
   }
 }
-// DISCLAIMER FOR ERRORS - Verbs only allowed in infinitve/base form!
+// DISCLAIMER FOR ERRORS - Verbs only allowed in infinitve/base form and non conjugated adjectives!
 function testVowelSoundsWords() {
   const wordsToTry = ['hål', 'håll', 'trolla', 'blåkulla']
 
@@ -44,6 +44,37 @@ function testRewriteBasedOnVowelSound() {
     const phonicsChecker = new SwedishPhonicsChecker(word)
     const rewrittenWord = phonicsChecker.phoneticVowelSpelling(word)
     console.log(`Your word was: ${word} but is pronounced: '${rewrittenWord}', where capital letters represent long vowel sounds.`)
+  })
+}
+
+function testVowelSoundExplanation() {
+  const phonicsChecker = new SwedishPhonicsChecker('blåkulla')
+  const identifiedVowelSounds = phonicsChecker.returnAllVowelSounds()
+
+  identifiedVowelSounds.forEach((vowel) => {
+    const vowelSound = phonicsChecker.returnVowelSoundExplanation(vowel)
+    console.log(`The vowel ${vowel} is pronounced '${vowelSound}'`)
+  })
+
+}
+
+function testVowelSoundExample() {
+  const phonicsChecker = new SwedishPhonicsChecker('blåkulla')
+  const identifiedVowelSounds = phonicsChecker.returnAllVowelSounds()
+
+  identifiedVowelSounds.forEach((vowel) => {
+    const vowelSoundExample = phonicsChecker.returnVowelExample(vowel)
+    console.log(`Your vowel is: ${vowel} and here is an example of how it is pronounced: '${vowelSoundExample}'`)
+  })
+}
+
+function testVowelSoundEnglishExample() {
+  const phonicsChecker = new SwedishPhonicsChecker('blåkulla')
+  const identifiedVowelSounds = phonicsChecker.returnAllVowelSounds()
+
+  identifiedVowelSounds.forEach((vowel) => {
+    const vowelSoundEnglishExample = phonicsChecker.returnVowelEnglishExample(vowel)
+    console.log(`Your vowel is: ${vowel} and here is an English word which uses a similar vowel sound: '${vowelSoundEnglishExample}'`)
   })
 }
 
@@ -87,9 +118,12 @@ function testIllegalCharacters() {
   console.log('The modified sentence: ' + reconstructedSentence.toString().replaceAll(',', ' '))
 }
 
-testConsonantSoundIndividualWords()
-testConsonantSoundSentence()
-testUnnecessarySpaces()
-testIllegalCharacters()
-testVowelSoundsWords()
-testRewriteBasedOnVowelSound()
+// testConsonantSoundIndividualWords()
+// testConsonantSoundSentence()
+// testUnnecessarySpaces()
+// testIllegalCharacters()
+// testVowelSoundsWords()
+// testRewriteBasedOnVowelSound()
+testVowelSoundExplanation()
+testVowelSoundExample()
+testVowelSoundEnglishExample()

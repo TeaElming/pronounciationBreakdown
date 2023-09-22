@@ -1,6 +1,7 @@
 import { ConsonantSoundIdentifier } from "./components/consonant-sounds/consonant-sound-identifier.js"
 import { WordSplitter } from "./components/word-splitter.js"
 import { VowelSoundIdentifier } from "./components/vowel-sounds/vowel-sound-identifier.js"
+import { VowelPhoneticallyExplained } from "./components/vowel-sounds/vowel-phonetically-explained.js"
 
 /**
  * Swedish Phonics checker which allows the user to manipulate a string.
@@ -18,6 +19,7 @@ export class SwedishPhonicsChecker {
     this.wordToCheck = wordToCheck
     this.consonantSoundIdentifier = new ConsonantSoundIdentifier()
     this.vowelSoundIdentifier = new VowelSoundIdentifier()
+    this.vowelExplainer = new VowelPhoneticallyExplained()
     this.wordSplitter = new WordSplitter()
   }
 
@@ -41,7 +43,7 @@ export class SwedishPhonicsChecker {
    *
    * @return {String}
    */
-  returnInitialPhonicSound() {
+  returnInitialConsonantSound() {
     return this.consonantSoundIdentifier.identifyConsonantSound(this.wordToCheck)
   }
 
@@ -71,6 +73,22 @@ export class SwedishPhonicsChecker {
    */
   phoneticVowelSpelling() {
     return this.vowelSoundIdentifier.rewriteWithIdentifiedVowelSound(this.wordToCheck)
+  }
+
+  returnVowelSoundExplanation(vowel) {
+    // Error handling for ensuring only one vowel is entered
+    return this.vowelExplainer.returnVowelSound(vowel)
+
+  }
+
+  returnVowelExample(vowel) {
+    // Error handling for ensuring only one vowel is entered
+    return this.vowelExplainer.returnVowelExample(vowel)
+  }
+
+  returnVowelEnglishExample(vowel) {
+    // Error handling for ensuring only one vowel is entered
+    return this.vowelExplainer.returnVowelEnglishExample(vowel)
   }
 
 
