@@ -187,7 +187,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'affär'
     const phoneticSpelling = 'ahff-AIR'
     const translatedMeaning = 'shop (noun)'
-    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   shortA_englishExample() {
@@ -202,7 +202,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'apa'
     const phoneticSpelling = 'AA-pah'
     const translatedMeaning = 'monkey (noun)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   longA_englishExample() {
@@ -217,7 +217,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'eld'
     const phoneticSpelling = 'ehlld'
     const translatedMeaning = 'fire (noun)'
-    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   shortE_englishExample() {
@@ -233,7 +233,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'ek'
     const phoneticSpelling = 'ek-k'
     const translatedMeaning = 'oak (noun)'
-    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   longE_englishExample() {
@@ -248,7 +248,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'inte'
     const phoneticSpelling = 'INN-teh'
     const translatedMeaning = 'not (adverb)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   shortI_englishExample() {
@@ -264,7 +264,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'is'
     const phoneticSpelling = 'ees'
     const translatedMeaning = 'ice (noun)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   longI_englishExample() {
@@ -279,7 +279,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'och'
     const phoneticSpelling = 'ock'
     const translatedMeaning = 'and (conjunction)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   shortO_englishExample() {
@@ -295,7 +295,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'olika'
     const phoneticSpelling = 'ooh-LEAK-ah'
     const translatedMeaning = 'different (adjective)'
-    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   longO_englishExample() {
@@ -310,7 +310,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'ung'
     const phoneticSpelling = 'oung'
     const translatedMeaning = 'young (adjective)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   shortU_englishExample() {
@@ -326,7 +326,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'slut'
     const phoneticSpelling = 'sloot'
     const translatedMeaning = 'end (noun)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   longU_englishExample() {
@@ -341,7 +341,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'yrke'
     const phoneticSpelling = 'UERR-key'
     const translatedMeaning = 'profession (noun)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   shortY_englishExample() {
@@ -357,7 +357,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'yr'
     const phoneticSpelling = 'uer'
     const translatedMeaning = 'dizzy (adjective)'
-    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   longY_englishExample() {
@@ -372,7 +372,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'ålder'
     const phoneticSpelling = 'OLL-dehr'
     const translatedMeaning = 'age (noun)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   shortÅ_englishExample() {
@@ -388,7 +388,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'år'
     const phoneticSpelling = 'oar'
     const translatedMeaning = 'year (noun)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   longÅ_englishExample() {
@@ -403,7 +403,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'äldre'
     const phoneticSpelling = 'ELL-dreh'
     const translatedMeaning = 'older (adjective)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   shortÄ_englishExample() {
@@ -419,7 +419,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'äta'
     const phoneticSpelling = 'AI-tah'
     const translatedMeaning = 'eat (verb, base form)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   longÄ_englishExample() {
@@ -434,7 +434,7 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'öppna'
     const phoneticSpelling = 'UHPP-nah'
     const translatedMeaning = 'open (verb, base form)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   shortÖ_englishExample() {
@@ -450,13 +450,11 @@ export class VowelPhoneticallyExplained {
     const SwedishSpelling = 'öl'
     const phoneticSpelling = 'uuhl'
     const translatedMeaning = 'beer (noun)'
-    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning '${translatedMeaning}`
+    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
 
   longÖ_englishExample() {
     return 'burn/earn'
   }
-
-
 
 }

@@ -15,8 +15,7 @@ export class SwedishPhonicsChecker {
    * Creates an instance of SwedishPhonicsChecker.
    * @param {String} wordToCheck this can be either several words or a singular word
    */
-  constructor(wordToCheck) {
-    this.wordToCheck = wordToCheck
+  constructor() {
     this.consonantSoundIdentifier = new ConsonantSoundIdentifier()
     this.vowelSoundIdentifier = new VowelSoundIdentifier()
     this.vowelExplainer = new VowelPhoneticallyExplained()
@@ -30,12 +29,12 @@ export class SwedishPhonicsChecker {
    * @return {Array} allIdentifiedWords that were found
    * @memberof SwedishPhonicsChecker
    */
-  returnAllWordsInString() {
-    if (this.wordSplitter.checkIfMultipleWords(this.wordToCheck)) {
-      const allIdentifiedWords = this.wordSplitter.separateWords(this.wordToCheck)
+  returnAllWordsInString(wordToCheck) {
+    if (this.wordSplitter.checkIfMultipleWords(wordToCheck)) {
+      const allIdentifiedWords = this.wordSplitter.separateWords(wordToCheck)
       return allIdentifiedWords
     }
-    return [this.wordToCheck] // to avoid returning undefined and making sure to return same type
+    return [wordToCheck] // to avoid returning undefined and making sure to return same type
   }
 
   /**
@@ -43,8 +42,8 @@ export class SwedishPhonicsChecker {
    *
    * @return {String}
    */
-  returnInitialConsonantSound() {
-    return this.consonantSoundIdentifier.identifyConsonantSound(this.wordToCheck)
+  returnInitialConsonantSound(wordToCheck) {
+    return this.consonantSoundIdentifier.identifyConsonantSound(wordToCheck)
   }
 
   /**
@@ -52,8 +51,8 @@ export class SwedishPhonicsChecker {
    *
    * @return {String}
    */
-  phoneticConsonantSpelling() {
-    return this.consonantSoundIdentifier.rewritePhonetically(this.wordToCheck)
+  phoneticConsonantSpelling(wordToCheck) {
+    return this.consonantSoundIdentifier.rewritePhonetically(wordToCheck)
   }
 
   /**
@@ -62,8 +61,8 @@ export class SwedishPhonicsChecker {
    *
    * @return {Array} the identified vowelsounds are returned as an array.
    */
-  returnAllVowelSounds() {
-    return this.vowelSoundIdentifier.identifyVowelSounds(this.wordToCheck)
+  returnAllVowelSounds(wordToCheck) {
+    return this.vowelSoundIdentifier.identifyVowelSounds(wordToCheck)
   }
 
   /**
@@ -71,8 +70,8 @@ export class SwedishPhonicsChecker {
    *
    * @return {String}
    */
-  phoneticVowelSpelling() {
-    return this.vowelSoundIdentifier.rewriteWithIdentifiedVowelSound(this.wordToCheck)
+  phoneticVowelSpelling(wordToCheck) {
+    return this.vowelSoundIdentifier.rewriteWithIdentifiedVowelSound(wordToCheck)
   }
 
   returnVowelSoundExplanation(vowel) {

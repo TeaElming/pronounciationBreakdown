@@ -12,10 +12,34 @@ export class VowelSoundIdentifier {
    * @param {Array} wordSeparatedIntoLetters
    * @param {Number} indexNumberOfVowel this takes the index of the vowel.
    * @return {Boolean} returns true if the two letters are the same
-   * @memberof VowelSoundIdentifier
    */
   checkDuplicateIndex(wordSeparatedIntoLetters, indexNumberOfVowel) {
     if (wordSeparatedIntoLetters[indexNumberOfVowel + 1] === wordSeparatedIntoLetters[indexNumberOfVowel + 2]) {
+      return true
+    }
+  }
+  /**
+   * Checks if the two consecutive letters following the given index make the 'ck' combination.
+   *
+   * @param {Array} wordSeparatedIntoLetters
+   * @param {Number} indexNumberOfVowel this takes the index of the vowel.
+   * @return {Boolean} returns true if the two letters are the same
+   */
+  checkForCK(wordSeparatedIntoLetters, indexNumberOfVowel) {
+    if (wordSeparatedIntoLetters[indexNumberOfVowel + 1] === 'c' && wordSeparatedIntoLetters[indexNumberOfVowel + 2] === 'k') {
+      return true
+    }
+  }
+
+  /**
+ * Checks if the two consecutive letters following the given index make the 'ch' combination.
+ *
+ * @param {Array} wordSeparatedIntoLetters
+ * @param {Number} indexNumberOfVowel this takes the index of the vowel.
+ * @return {Boolean} returns true if the two letters are the same
+ */
+  checkForCH(wordSeparatedIntoLetters, indexNumberOfVowel) {
+    if (wordSeparatedIntoLetters[indexNumberOfVowel + 1] === 'c' && wordSeparatedIntoLetters[indexNumberOfVowel + 2] === 'h') {
       return true
     }
   }
@@ -26,7 +50,6 @@ export class VowelSoundIdentifier {
    * @param {Array} wordSeparatedIntoLetters
    * @param {Number} indexNumberOfVowel
    * @return {Boolean} returns true if the letter IS last in the word
-   * @memberof VowelSoundIdentifier
    */
   checkLastIndex(wordSeparatedIntoLetters, indexNumberOfVowel) {
     if (!wordSeparatedIntoLetters[indexNumberOfVowel + 1]) {
@@ -34,13 +57,26 @@ export class VowelSoundIdentifier {
     }
   }
 
+  checkCombinedShortSoundRequirements(wordSeparatedIntoLetters, indexNumberOfVowel) {
+    if (
+      this.checkDuplicateIndex(wordSeparatedIntoLetters, indexNumberOfVowel) &&
+      this.checkForCK(wordSeparatedIntoLetters, indexNumberOfVowel) &&
+      this.checkForCH(wordSeparatedIntoLetters, indexNumberOfVowel) &&
+      this.checkLastIndex(wordSeparatedIntoLetters, indexNumberOfVowel)
+    ) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+
   /**
    * Identify each vowel sound in the word.
    * Store vowel sounds in an array.
    *
    * @param {*} word
    * @return {*}
-   * @memberof VowelSoundIdentifier
    */
   identifyVowelSounds(word) {
     const identifiedLetters = this.wordSplitter.separateLetters(word.toLowerCase())
@@ -49,7 +85,7 @@ export class VowelSoundIdentifier {
 
     for (let i = 0; i < identifiedLetters.length; i++) {
       if (this.allVowels.includes(identifiedLetters[i])) {
-        if (!this.checkDuplicateIndex(identifiedLetters, i) && !this.checkLastIndex(identifiedLetters, i)) {
+        if (!this.checkCombinedShortSoundRequirements(identifiedLetters, i)) {
           identifiedVowelSound.push(identifiedLetters[i].toUpperCase())
         } else {
           identifiedVowelSound.push(identifiedLetters[i])
@@ -62,8 +98,7 @@ export class VowelSoundIdentifier {
    * Word rewritten using the identifyVowelSound method above.
    *
    * @param {String} word
-   * @return {String} rewritten based on vowel sound identification
-   * @memberof VowelSoundIdentifier
+   * @return {String} rewritten based on vowel sound identification.
    */
   rewriteWithIdentifiedVowelSound(word) {
     const identifiedVowelSounds = this.identifyVowelSounds(word)
