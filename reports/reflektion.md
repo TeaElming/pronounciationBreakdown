@@ -19,6 +19,8 @@ When reading the chapter, I took notes of 19 rules, although two of those were n
 There were three rules that I personally found very useful for my own personal development, that I will use as a baseline when naming code snippets in the future. The first one was to ‘use searchable names’; I often search for key words when coding, and it was a good insight to begin reflecting on the searchability of the names. The book stated that the length of a name should correspond with the size of its scope, which I thought was an interesting take on it. Secondly, I found the rule about keeping the names ‘pronounceable’ was interesting, and something that tied in well with the rule about ‘avoiding encodings’. Thirdly, I had never reflected on the importance of ‘picking one word per concept’, for example ‘get’ or ‘fetch’. Previously, I have just opted for one and ran with it without thinking too long but reading it in this book made me think twice about my choices.
 Overall, I found chapter two to be a pleasant read and one that made me reflect on my own naming of various things. In general, I think that I have a tendency to be fairly literal in my naming, which can be good, but not reflective enough throughout the process to avoid having too similar names or occasionally breaking the ‘avoid disinformation’ rule. These are aspects I need to improve on from now on.
 
+[Back to top](#table-of-contents)
+
 
 ## Chapter 2 - Table of Names
 
@@ -45,8 +47,23 @@ Overall, I found chapter two to be a pleasant read and one that made me reflect 
 |                                | **Mental Mapping**     |
 |  | Several improvements can be made to these names, but they do not require mental mapping of the sort where we have to guess what various things represent. The name clearly takes a vowel, rather than just putting (v) in there.  |
 ||
+[Back to top](#table-of-contents)
 
 # Chapter 3 - Reflection
+The most important thing that I took with me after having read chapter 3 in Clean Code about how to write methods and functions was that it is acceptable to start big and then scale it down. However, it is not acceptable to write lazy methods that are not cleaned up and organised into smaller chunks. Although a potentially quite poor analogy, I kept visualising my laundry. It is fine to throw everything in a pile after it has come of the drying rack, however it is not acceptable to just throw it into the closet like that. Before going into the closet, everything is sorted into piles depending on which drawer it should go into or if it should be hung up, and then it is folded or placed on a hanger, before it is finally placed in the closet. On a good day I will even colour coordinate each drawer! Hence, I should treat my code like I treat my laundry.
+
+One of the key messages from chapter three was to write methods that did one thing, but that they should do that thing well. The shorter the method, the better. A lot of the rules regarding the functions and methods would come automatically if the ‘do one thing’ and ‘small, then smaller’ rules were followed. For example, one level of abstraction per function, following structured programming rules, or command query separation are rules that are more easily followed if each block of code only does one thing. One perspective that I found especially helpful was the idea that a method with nested if-statements or loops can almost always be simplified and split into smaller methods. I had not thought of this before, and it is something that I will have to focus on while writing code from now on.
+One rule that I have not thought about before, and that I know that I have not been following prior to this, is the stepdown rule, where the hierarchy and abstraction levels of functions should be understood by reading the code top to bottom. I am guilty of often writing codes in the order that I think of them, which does not necessarily correspond to their abstraction levels, especially not when I start with big blocks of code and then try to split it up into smaller chunks.
+
+Chapter three also discusses arguments, where it ranks niladic methods as best, followed by monadic, closely followed by dyadic methods. However, once we get to triadic or polyadic, we should start reconsidering our choices. It may be the case that we need to work with objects instead, and extract parts of it to individual classes. There will be specific circumstances that call for triads, such as providing a 3D-coordinate (x,y,z), but we can often work around it by creating new classes and objects. While reading about arguments, I learned about the concept of argument lists, which was new to me. I have never reflected on the cases where several arguments are entered but treated the same, nor do I have any recollection of using them.
+
+I have never thought of try/catch blocks, and thereby error handling, as code that ‘counts’ in the same sense as other methods. I have in the past written error handling in try/catch blocks separately from the rest of my code, but that has always been out of convenience so that I could reuse it, and not because I have viewed it as something on its own. Reading chapter 3 was a good eye opener that made me realise that error handling should be dealt with separately, not just for convenience, but also to keep other methods clean.
+
+Something that greatly surprised me was the view on switch-statements, and that they should only be hidden behind inheritances. After having read the chapter, I understand why it is so important when it comes to keeping the code easy to update but difficult to manipulate incorrectly, but I had never heard of it before. I have several switch-statements in my code that are not hidden behind inheritance, and this is something that should be improved.
+
+Finally, chapter three taught me a lot about how to think about my methods and the importance of keeping everything short and easily managed. For the sake of maintenance, it is crucial that each method is well structured, does what it is supposed to do, and doesn’t have any hidden side effects.
+
+[Back to top](#table-of-contents)
 
 ## Chapter 3 - Table of Methods
 
@@ -75,7 +92,7 @@ Overall, I found chapter two to be a pleasant read and one that made me reflect 
 | | | **Use descriptive names** |
 | | | It is clear from the verb/noun pair of method name and argument name what the method does. The naming of the variables within the method also help to explain what is happening and the roles of the different variables. It does what it claims to do, and nothing else, which means it also follows the no side effects-rule. |
 
-
+[Back to top](#table-of-contents)
 
 ### 1. returnVowelExample(vowel)
 ```
@@ -139,6 +156,7 @@ Overall, I found chapter two to be a pleasant read and one that made me reflect 
   }
 
 ```
+[Back to top](#table-of-contents)
 
 ### 2. identifyConsonantSound (word)
 ```
@@ -180,6 +198,7 @@ identifyConsonantSound (word) {
     return consonantSound
   }
 ```
+[Back to top](#table-of-contents)
 
 ### 3. rewriteWithIdentifiedVowelSound (word)
 ```
@@ -202,6 +221,7 @@ identifyConsonantSound (word) {
     return rewrittenWord.join('')
   }
 ```
+[Back to top](#table-of-contents)
 
 ### 4. rewritePhonetically (word)
 
@@ -224,6 +244,7 @@ identifyConsonantSound (word) {
   }
 
 ```
+[Back to top](#table-of-contents)
 
 ### 5. identifyVowelSounds (word)
 ```
@@ -243,3 +264,5 @@ identifyVowelSounds (word) {
     } return identifiedVowelSound
   }
 ```
+
+[Back to top](#table-of-contents)
