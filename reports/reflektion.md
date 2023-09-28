@@ -1,5 +1,6 @@
 # Table of Contents
 - [Table of Contents](#table-of-contents)
+- [Project Reflection](#project-reflection)
 - [Chapter 2 - Reflection](#chapter-2---reflection)
   - [Chapter 2 - Table of Names](#chapter-2---table-of-names)
 - [Chapter 3 - Reflection](#chapter-3---reflection)
@@ -9,6 +10,15 @@
     - [3. rewriteWithIdentifiedVowelSound (word)](#3-rewritewithidentifiedvowelsound-word)
     - [4. rewritePhonetically (word)](#4-rewritephonetically-word)
     - [5. identifyVowelSounds (word)](#5-identifyvowelsounds-word)
+
+# Project Reflection
+This project has been fun while also forcing me to think about aspects I have not considered before. As I have not yet read the 1DV613-course, I have not had this level of freedom when developing a course related project before. It was challenging, and interesting. One of my biggest struggles was to follow the rule of ‘do one thing, and do it well’ when planning my methods. I should have adhered more strongly to the concept of starting big and then scaling back, but that is something I will have to work on improving during future projects.
+
+I did make a lot of changes in my program as I learned more, one of them was related to how to take arguments for my main module. Initially, I designed it so that my Swedish module would have to take a constructor argument, which should be a string to manipulate or find out information from, but as I progressed, I realised that it was not ideal in terms of functionality. Doing it that way would require the user of the module to create a new instance of the module-class each time it wanted to check a new word, which I realised was not the most convenient. Initially, I did it that way to allow the user to instantiate an object and then use its methods as niladic methods, however I came to the conclusion that it was easier for maintenance to instantiate an object and have the methods be monadic instead. This became especially clear to me when I added the functionality of getting examples or explanations of vowel sounds, as they took individual vowels rather than whole words.
+
+In terms of naming my variables and methods, I thought I was doing a good job until I read chapter 2 and realised that I was not avoiding disinformation or making meaningful distinctions, but I did add gratuitous context. However, I did often use searchable names and made sure to use verb/noun pairs, which was good.
+
+All in all, it was a fun project and thanks to a big part of the focus being on reflecting, I found myself coming to several insights with regards to my own next steps for professional development.
 
 
 # Chapter 2 - Reflection
