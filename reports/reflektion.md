@@ -12,6 +12,13 @@
 
 
 # Chapter 2 - Reflection
+Chapter two of Clean Code focuses on how to name our variables, methods, and classes when writing code. The main message that I took from the chapter was to always ask myself three questions when naming anything: why, what, how? In more detail, am I making it clear to the user why the code is necessary? Am I making it clear to the user what the code does? And finally, am I making it clear to the user how the code should be used? If I can confidently say yes to all of these questions, I can allow myself to put this name to the back of my mind. In addition to these three questions, I also found it useful to remember that a good name should remove the need for a comment explaining the named code’s purpose and intended usage.
+
+When reading the chapter, I took notes of 19 rules, although two of those were noted down as ‘add meaningful context’. Some of these rules, held no value to me personally, as they were referring to old practices to avoid now. As someone who has not been working with programming for long, I did not even know that it used to be common to assign member prefixes (rule: avoid member prefixes), to write the letter ‘i’ before the name when creating an interface (rule: interfaces and implementations), or what ‘Hungarian notations’ were. Rules such as ‘don’t be cute’ and ‘don’t pun’ are valuable, but not ones that were very applicable to my own personal journey, however I can definitely understand the value in stating them, black on white. I also found that it was helpful that the book stated clearly that when there is solution domain name available, it is good to use, but if not, it is a good idea to use a problem domain name. I found this to be a good rule of thumb that, although it makes perfect sense when reading it, I had not thought of before.
+
+There were three rules that I personally found very useful for my own personal development, that I will use as a baseline when naming code snippets in the future. The first one was to ‘use searchable names’; I often search for key words when coding, and it was a good insight to begin reflecting on the searchability of the names. The book stated that the length of a name should correspond with the size of its scope, which I thought was an interesting take on it. Secondly, I found the rule about keeping the names ‘pronounceable’ was interesting, and something that tied in well with the rule about ‘avoiding encodings’. Thirdly, I had never reflected on the importance of ‘picking one word per concept’, for example ‘get’ or ‘fetch’. Previously, I have just opted for one and ran with it without thinking too long but reading it in this book made me think twice about my choices.
+Overall, I found chapter two to be a pleasant read and one that made me reflect on my own naming of various things. In general, I think that I have a tendency to be fairly literal in my naming, which can be good, but not reflective enough throughout the process to avoid having too similar names or occasionally breaking the ‘avoid disinformation’ rule. These are aspects I need to improve on from now on.
+
 
 ## Chapter 2 - Table of Names
 
@@ -66,7 +73,7 @@
 | **[identifyVowelSounds (word)](#5-identifyvowelsounds-word)** | **14** | **Small** |
 | | | Although this method only contains 14 lines, it could be broken down into smaller segments.  A rule of thumb is that if there are nested if-statements, the method can usually be broken down into smaller chanks. Ane xample of how it could have been broken down here would be to writethe methods isVowel(letter) (returning true of the letter is a vowel), processVowel(letters, index) (returning the letter to either lower or upper case depending on the spelling, and then these two could have been used in identfyVowelSound(word).  |
 | | | **Use descriptive names** |
-| | | It is clear from the verb/noun pair of method name and argument name what the method does. The naming of the variables within the method also help to explain what is happening and the roles of the different variables. It does what it claims to do, and nothing else, which means it also follows the no side effects-rule. | 
+| | | It is clear from the verb/noun pair of method name and argument name what the method does. The naming of the variables within the method also help to explain what is happening and the roles of the different variables. It does what it claims to do, and nothing else, which means it also follows the no side effects-rule. |
 
 
 
