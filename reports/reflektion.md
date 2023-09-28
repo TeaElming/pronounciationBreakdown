@@ -1,3 +1,15 @@
+# Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Chapter 2 - Reflection](#chapter-2---reflection)
+  - [Chapter 2 - Table of Names](#chapter-2---table-of-names)
+- [Chapter 3 - Reflection](#chapter-3---reflection)
+  - [Chapter 3 - Table of Methods](#chapter-3---table-of-methods)
+    - [1. returnVowelExample(vowel)](#1-returnvowelexamplevowel)
+    - [2. identifyConsonantSound (word)](#2-identifyconsonantsound-word)
+    - [3. rewriteWithIdentifiedVowelSound (word)](#3-rewritewithidentifiedvowelsound-word)
+    - [4. rewritePhonetically (word)](#4-rewritephonetically-word)
+    - [5. identifyVowelSounds (word)](#5-identifyvowelsounds-word)
+
 
 # Chapter 2 - Reflection
 
@@ -27,7 +39,7 @@
 |  | Several improvements can be made to these names, but they do not require mental mapping of the sort where we have to guess what various things represent. The name clearly takes a vowel, rather than just putting (v) in there.  |
 ||
 
-# Chapter 3 - Refelction
+# Chapter 3 - Reflection
 
 ## Chapter 3 - Table of Methods
 
@@ -43,7 +55,19 @@
 ||| A positive of this method is that it is monadic, it only takes one argument, which is the word it is wanting to check the pronunciation of. The method name identifyConsonantSound(word) clearly shows what it is aiming to do, so it easy to understand how to use it. |
 ||| **Command Queary Separation** |
 ||| As the book states, a method should either do something or answer something, but it should not do both. This method does something – it identifies the initial consonant sound. |
-| |||
+| **[rewriteWithIdentifiedVowelSound (word)](#3-rewritewithidentifiedvowelsound-word)** | **17** |**No side effects** |
+| || This method does not affect anything outside its scope, it purely operates on the input ‘word’ and local variables. The local variables have been named in a logical manner to allow for an easy read. Even though the book states that it is acceptable to use single letter variables in loops, vowelIndex has been used in the loop to allow for an easier distinction of what is being looped through. The main focus for the purpose of this reflection is that the method adheres to the no side effects-rule. |
+| | | **Structured programming** |
+| | | Following the rules of structured programming, the method does have one entry point and one exit point (the return statement). There are no ‘break’ or ‘continue’ statements present, which follows the rule as well. The loop is purely used to modify the local variable, and is therefore acceptable in relation to the structured programming rule. However, in relation to the ‘only do one thing’ rule, this method could be broken down into smaller segments. As it stands, we are using two previously created methods within this method. We could have altered it so that the rewrite-method took the word and the vowel sounds as two arguments, and worked with it from there. However, that would require a dyadic method rather than monadic, which is not quite as good. |
+| **[rewritePhonetically (word)](#4-rewritephonetically-word)** | **15** | **Use descriptive names** |
+| | | The name of this method was very descriptive when it was written, as there was only logic supporting consonant phonics at that stage. However, now that the module has been expanded to also include vowel phonics, this name needs to be updated to clarify that it is being rewritten based on the consonant phonics. The vowel equivalent is called rewriteUsingIdentifiedVowels(), which is not the greatest name, but at least better than the consonant one. Both of them could potentially be renamed ‘rewriteWithConsonantSound()’ and ‘rewriteWithVowelSound(), or something along those lines.  However, it can also be argued that as this method is stored in a class called ‘ConsonantSoundIdentifier’ and the other method is stored in a class called ‘VowelSoundIdentifier’, it would make more sense to name both of them rewritePhonetically(word), as they would do the same thing but for either consonants or vowels, and be accessed throw vowelIdentifier.rewritePhoentically() and consonantIdentifier.rewritePhonetically() for example. |
+| | | **DRY** |
+| | | The method utilises other methods within itself to avoid repeating processes that have been solved previously, and it only uses them once. It is possible that the if-statements could have been written in a more concise manner, as they resemble a chunk of the identifyConsonantSound, but apart from that there is no repetition within the method. |
+| **[identifyVowelSounds (word)](#5-identifyvowelsounds-word)** | **14** | **Small** |
+| | | Although this method only contains 14 lines, it could be broken down into smaller segments.  A rule of thumb is that if there are nested if-statements, the method can usually be broken down into smaller chanks. Ane xample of how it could have been broken down here would be to writethe methods isVowel(letter) (returning true of the letter is a vowel), processVowel(letters, index) (returning the letter to either lower or upper case depending on the spelling, and then these two could have been used in identfyVowelSound(word).  |
+| | | **Use descriptive names** |
+| | | It is clear from the verb/noun pair of method name and argument name what the method does. The naming of the variables within the method also help to explain what is happening and the roles of the different variables. It does what it claims to do, and nothing else, which means it also follows the no side effects-rule. | 
+
 
 
 ### 1. returnVowelExample(vowel)
