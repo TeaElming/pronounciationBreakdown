@@ -8,6 +8,11 @@ Currently supports the intial consonant sounds of:
 
 It also supprots the identification process of long or short vowel sounds in regular, non-compound words.
 
+# Access
+The 'swedish-phonics-module.js' can be found if pressing the link: [src/js/swedish-phonics-module.js](./src/js/swedish-phonics-module.js)
+
+You can choose to clone it and help to improve it, or you can fork it and work on your own branch.
+
 # Usage
 The Swedish language has 9 vowels (A, E, I, O, U, Y, Å, Ä, Ö). This module can, by following standarad pronunciation rules, identify if the vowel sound in a word is long or short.
 
@@ -23,7 +28,7 @@ Consonant sounds affected by soft vowels:
 
 **Soft vowels:** *E, I, Y, Ä, Ö*
 
-# USAGE
+# How to interact with the module
 The user should only have to interact with the file called 'swedish-phonics-module.js'. It can create a new instance of the class SwedishPhonicsIdentifier() and use the methods included to do the following:
 1. returnAllWordsInString(input) - Splits a string into separate words
 2. returnInitialConsonantSound(input) - Provides the initial phonetic sound of a word.
