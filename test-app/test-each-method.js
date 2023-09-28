@@ -52,7 +52,7 @@ function testReturnVowelExample() {
 }
 
 function testReturnVowelEnglishExample() {
-  const vowelSoundEnglishExample = swedishPhonicsChecker.returnVowelEnglishExample('E')
+  const vowelSoundEnglishExample = swedishPhonicsChecker.returnVowelEnglishExample(['E'])
 
   console.log(`An English example of the swedish long E sounds is :  ${vowelSoundEnglishExample}`)
 

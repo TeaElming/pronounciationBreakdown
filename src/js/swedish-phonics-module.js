@@ -74,21 +74,49 @@ export class SwedishPhonicsChecker {
     return this.vowelSoundIdentifier.rewriteWithIdentifiedVowelSound(wordToCheck)
   }
 
+  /**
+   * Returns an explanation of the sound, e.g. 'e' is pronunced 'eh'
+   *
+   * @param {String} vowel
+   * @return {String}
+   */
   returnVowelSoundExplanation(vowel) {
     // Error handling for ensuring only one vowel is entered
     return this.vowelExplainer.returnVowelSound(vowel)
 
   }
 
+  /**
+   * Returns an example word using the sound
+   *
+   * @param {String} vowel
+   * @return {String}
+   */
   returnVowelExample(vowel) {
     // Error handling for ensuring only one vowel is entered
     return this.vowelExplainer.returnVowelExample(vowel)
   }
 
+  /**
+   * Returns an example of an English word using the sound
+   *
+   * @param {String} vowel
+   * @return {String}
+   */
   returnVowelEnglishExample(vowel) {
     // Error handling for ensuring only one vowel is entered
     return this.vowelExplainer.returnVowelEnglishExample(vowel)
   }
 
+  /**
+ * Throws a TypeError if the provided argument is not a string.
+ *
+ * @param {any} input
+ */
+  catchTypeError(input) {
+    if (typeof input !== 'string') {
+      throw new TypeError('Expected argument to be of type string')
+    }
+  }
 
 }
