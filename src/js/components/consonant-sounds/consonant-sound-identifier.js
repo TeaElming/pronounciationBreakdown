@@ -47,14 +47,14 @@ export class ConsonantSoundIdentifier {
             consonantSound = 'sj'
           } else if (identifiedLetters[2] === 'j') { // 'sj' always 'sj' sound
             consonantSound = 'sj'
+          } else {
+            consonantSound = 'sk'
           }
-          consonantSound = 'sk'
-        }
-        else if (identifiedLetters[1] === 't' && identifiedLetters[2] === 'j') { // 'stj' combination makes 'sj'
+        } else if (identifiedLetters[1] === 't' && identifiedLetters[2] === 'j') { // 'stj' combination makes 'sj'
           consonantSound = 'sj'
         }
       }
-      break
+        break
     }
     return consonantSound
   }
@@ -66,7 +66,7 @@ export class ConsonantSoundIdentifier {
    * @return {String} phoneticallySpelledWord - the word which has been phonetically spelled.
    * @memberof ConsonantSoundIdentifier
    */
-  rewritePhonetically (word) {
+  rewritePhonetically(word) {
     const identifiedConsonantSound = this.identifyConsonantSound(word.toLowerCase())
     const identifiedLetters = this.wordSplitter.separateLetters(word.toLowerCase())
 
@@ -75,6 +75,8 @@ export class ConsonantSoundIdentifier {
     if (identifiedLetters[0] === 's' && identifiedLetters[1] === 'k') {
       if (identifiedConsonantSound === 'sj') {
         phoneticallySpelledWord = 'sj' + word.slice(2)
+      } else {
+        phoneticallySpelledWord = 'sk' + word.slice(2)
       }
     } else if (identifiedLetters[0] !== identifiedConsonantSound) {
       phoneticallySpelledWord = identifiedConsonantSound + word.slice(1)
