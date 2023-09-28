@@ -59,9 +59,9 @@ export class VowelSoundIdentifier {
 
   checkCombinedShortSoundRequirements(wordSeparatedIntoLetters, indexNumberOfVowel) {
     if (
-      this.checkDuplicateIndex(wordSeparatedIntoLetters, indexNumberOfVowel) &&
-      this.checkForCK(wordSeparatedIntoLetters, indexNumberOfVowel) &&
-      this.checkForCH(wordSeparatedIntoLetters, indexNumberOfVowel) &&
+      this.checkDuplicateIndex(wordSeparatedIntoLetters, indexNumberOfVowel) ||
+      this.checkForCK(wordSeparatedIntoLetters, indexNumberOfVowel) ||
+      this.checkForCH(wordSeparatedIntoLetters, indexNumberOfVowel) ||
       this.checkLastIndex(wordSeparatedIntoLetters, indexNumberOfVowel)
     ) {
       return true

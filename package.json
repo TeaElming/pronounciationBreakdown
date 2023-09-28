@@ -1,0 +1,22 @@
+{
+  "name": "pronounciationbreakdown",
+  "version": "1.0.0",
+  "description": "Breaks down the first sounds of a Swedish word to determine the correct pronunciation of it.",
+  "main": "../src/js/swedish-phonics-module.js",
+  "type": "module",
+  "scripts": {
+    "test": "node ./test-app/test-each-method.js"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeaElming/pronounciationBreakdown.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeaElming/pronounciationBreakdown/issues"
+  },
+  "homepage": "https://github.com/TeaElming/pronounciationBreakdown#readme"
+}

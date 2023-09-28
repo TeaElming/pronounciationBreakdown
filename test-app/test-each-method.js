@@ -5,7 +5,7 @@ function testReturnAllWordsInString() {
 
   const swedishPhonicsChecker = new SwedishPhonicsChecker()
   const seperatedWords = swedishPhonicsChecker.returnAllWordsInString(sentenceToSplit)
-  console.log(seperatedWords)
+  console.log(`Initial sentence: ${sentenceToSplit} - Seperated sentence: ${seperatedWords}`)
 }
 
 function testReturnInitialConsonantSound() {
@@ -14,7 +14,7 @@ function testReturnInitialConsonantSound() {
   wordsToTry.forEach((word) => {
     const swedishPhonicsChecker = new SwedishPhonicsChecker()
     const initialPhonicSound = swedishPhonicsChecker.returnInitialConsonantSound(word)
-    console.log(`The initial phonic sound for the word ${word} is: '${initialPhonicSound}'.`)
+    console.log(`The initial phonic sound for the word '${word}' is: '${initialPhonicSound}'.`)
   })
 }
 
@@ -31,7 +31,7 @@ function testReturnAllVowelSounds () {
   const wordToTry = 'blåkulla'
   const swedishPhonicsChecker = new SwedishPhonicsChecker()
   const allVowelSounds = swedishPhonicsChecker.returnAllVowelSounds(wordToTry)
-  console.log('Vowelsounds: ' + allVowelSounds)
+  console.log(`Vowelsounds in the word ${wordToTry}: ${allVowelSounds} `)
 }
 
 function testPhoneticVowelSpelling () {
