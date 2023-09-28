@@ -20,6 +20,8 @@ In terms of naming my variables and methods, I thought I was doing a good job un
 
 All in all, it was a fun project and thanks to a big part of the focus being on reflecting, I found myself coming to several insights with regards to my own next steps for professional development.
 
+***Final comment:***  I know that chapter 4 is not included in this, and I have therefore not included any reflections based on it. However, I want to highlight that I now know better than to use lots of unnecessary comments just for the sake of it (even JSDOC). I have commented everything, even though the vast majority of them serve no purpose at all. In the future, I will avoid this.
+
 
 # Chapter 2 - Reflection
 Chapter two of Clean Code focuses on how to name our variables, methods, and classes when writing code. The main message that I took from the chapter was to always ask myself three questions when naming anything: why, what, how? In more detail, am I making it clear to the user why the code is necessary? Am I making it clear to the user what the code does? And finally, am I making it clear to the user how the code should be used? If I can confidently say yes to all of these questions, I can allow myself to put this name to the back of my mind. In addition to these three questions, I also found it useful to remember that a good name should remove the need for a comment explaining the named code’s purpose and intended usage.
