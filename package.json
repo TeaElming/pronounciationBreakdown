@@ -5,9 +5,9 @@
   "main": "../src/js/swedish-phonics-module.js",
   "type": "module",
   "scripts": {
-    "test": "node ./test-app/test-each-method.js"
+    "test": "node ./test-app/test-each-method.js",
+    "lint": "eslint"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TeaElming/pronounciationBreakdown.git"
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/TeaElming/pronounciationBreakdown/issues"
   },
-  "homepage": "https://github.com/TeaElming/pronounciationBreakdown#readme"
+  "homepage": "https://github.com/TeaElming/pronounciationBreakdown#readme",
+  "devDependencies": {
+    "@lnu/eslint-config": "^1.1.7"
+  }
 }
