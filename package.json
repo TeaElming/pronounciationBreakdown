@@ -5,8 +5,8 @@
   "main": "../src/js/swedish-phonics-module.js",
   "type": "module",
   "scripts": {
-    "test": "node ./test-app/test-each-method.js",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "ava \"**/*.test.js\""
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/TeaElming/pronounciationBreakdown#readme",
   "devDependencies": {
-    "@lnu/eslint-config": "^1.1.7"
+    "@lnu/eslint-config": "^1.1.7",
+    "ava": "^5.3.1"
   }
 }
