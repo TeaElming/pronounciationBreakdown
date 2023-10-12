@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-jsdoc */
-import { BaseVowel } from './BaseVowel.js'
+import { BaseVowel } from '../Base-Vowel.js'
 
 export class LongA extends BaseVowel {
   /* @Override */

@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-jsdoc */
-import { BaseVowel } from './Base-Vowel.js'
+import { BaseVowel } from '../Base-Vowel.js'
 
 export class LongÄ extends BaseVowel {
   getSound () {
