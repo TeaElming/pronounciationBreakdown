@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-jsdoc */
-import { WordSplitter } from '../word-splitter.js'
+import { WordSplitter } from '../../Module/word-splitter.js'
 
 export class VowelSoundIdentifier {
   constructor () {

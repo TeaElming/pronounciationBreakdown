@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-jsdoc */
-import { WordSplitter } from '../word-splitter.js'
+import { WordSplitter } from '../../Module/word-splitter.js'
 import { ConsonantC } from './ConsonantSounds/ConsonantC.js'
 import { ConsonantD } from './ConsonantSounds/ConsonantD.js'
 import { ConsonantG } from './ConsonantSounds/ConsonantG.js'
