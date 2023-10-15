@@ -2,19 +2,19 @@
 import { BaseConsonant } from '../Base-Consonant.js'
 
 export class ConsonantH extends BaseConsonant {
-  followsDjRule () {
+  followsHjRule () {
     return this.word[1] === 'j'
   }
 
   getSound () {
-    if (this.followsDjRule()) {
+    if (this.followsHjRule()) {
       return 'j'
     }
     return 'h'
   }
 
   getPhoneticSpelling () {
-    if (this.followsDjRule()) {
+    if (this.followsHjRule()) {
       return 'j' + this.word.slice(2)
     }
     return 'h' + this.word.slice(1)
