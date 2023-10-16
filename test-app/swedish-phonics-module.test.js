@@ -1,5 +1,5 @@
 import test from 'ava'
-import { SwedishPhonicsChecker } from '../src/js/swedish-phonics-module.js'
+import { SwedishPhonicsChecker } from '../src/js/Module/swedish-phonics-module.js'
 
 const swedishPhonicsChecker = new SwedishPhonicsChecker()
 
