@@ -10,7 +10,7 @@ export class LongY extends BaseVowel {
     const SwedishSpelling = 'yta'
     const phoneticSpelling = 'EE-tah'
     const translatedMeaning = 'surface (noun)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
+    return `${SwedishSpelling} : ${phoneticSpelling} ~ meaning: ${translatedMeaning}`
   }
 
   getEnglishExample () {

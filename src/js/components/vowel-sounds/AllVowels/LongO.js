@@ -10,6 +10,10 @@ export class LongO extends BaseVowel {
     const SwedishSpelling = 'olika'
     const phoneticSpelling = 'OO-lee-kah'
     const translatedMeaning = 'different (adjective)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
+    return `${SwedishSpelling} : ${phoneticSpelling} ~ meaning: ${translatedMeaning}`
+  }
+
+  getEnglishExample () {
+    return 'ghoul'
   }
 }

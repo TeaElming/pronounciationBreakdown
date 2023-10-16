@@ -12,4 +12,9 @@ export class LongÅ extends BaseVowel {
     const translatedMeaning = 'year (noun)'
     return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
   }
+
+  /* @Override */
+  getEnglishExample () {
+    return 'board'
+  }
 }

@@ -10,7 +10,7 @@ export class LongU extends BaseVowel {
     const SwedishSpelling = 'hus'
     const phoneticSpelling = 'hoos'
     const translatedMeaning = 'house (noun)'
-    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
+    return `${SwedishSpelling} : ${phoneticSpelling} ~ meaning: ${translatedMeaning}`
   }
 
   getEnglishExample () {
