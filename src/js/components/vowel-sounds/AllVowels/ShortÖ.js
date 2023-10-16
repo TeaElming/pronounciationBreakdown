@@ -10,7 +10,7 @@ export class ShortÖ extends BaseVowel {
     const SwedishSpelling = 'öppna'
     const phoneticSpelling = 'UHPP-nah'
     const translatedMeaning = 'open (verb)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
+    return `${SwedishSpelling} : ${phoneticSpelling} ~ meaning: ${translatedMeaning}`
   }
 
   getEnglishExample () {

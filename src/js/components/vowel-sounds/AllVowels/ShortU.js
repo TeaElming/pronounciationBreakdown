@@ -10,7 +10,7 @@ export class ShortU extends BaseVowel {
     const SwedishSpelling = 'upp'
     const phoneticSpelling = 'uhpp'
     const translatedMeaning = 'up (adverb)'
-    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
+    return `${SwedishSpelling} : ${phoneticSpelling} ~ meaning: ${translatedMeaning}`
   }
 
   getEnglishExample () {

@@ -10,7 +10,7 @@ export class ShortI extends BaseVowel {
     const SwedishSpelling = 'inte'
     const phoneticSpelling = 'INN-teh'
     const translatedMeaning = 'not (adverb)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
+    return `${SwedishSpelling} : ${phoneticSpelling} ~ meaning: ${translatedMeaning}`
   }
 
   getEnglishExample () {

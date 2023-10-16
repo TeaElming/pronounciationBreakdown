@@ -10,7 +10,7 @@ export class ShortE extends BaseVowel {
     const SwedishSpelling = 'eld'
     const phoneticSpelling = 'ehlld'
     const translatedMeaning = 'fire (noun)'
-    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
+    return `${SwedishSpelling} : ${phoneticSpelling} ~ meaning: ${translatedMeaning}`
   }
 
   getEnglishExample () {

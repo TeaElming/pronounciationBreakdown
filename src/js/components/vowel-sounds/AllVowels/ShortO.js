@@ -10,7 +10,7 @@ export class ShortO extends BaseVowel {
     const SwedishSpelling = 'om'
     const phoneticSpelling = 'ohm'
     const translatedMeaning = 'if (conjunction)'
-    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
+    return `${SwedishSpelling} : ${phoneticSpelling} ~ meaning: ${translatedMeaning}`
   }
 
   getEnglishExample () {

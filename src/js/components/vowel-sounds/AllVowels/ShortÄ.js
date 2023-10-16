@@ -6,11 +6,11 @@ export class ShortÄ extends BaseVowel {
     return 'eh'
   }
 
-  getSwedsihExample () {
+  getSwedishExample () {
     const SwedishSpelling = 'äpple'
     const phoneticSpelling = 'ehp-luh'
     const translatedMeaning = 'apple (noun)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
+    return `${SwedishSpelling} : ${phoneticSpelling} ~ meaning: ${translatedMeaning}`
   }
 
   getEnglishExample () {

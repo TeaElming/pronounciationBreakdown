@@ -8,9 +8,9 @@ export class ShortÅ extends BaseVowel {
 
   getSwedishExample () {
     const SwedishSpelling = 'ålder'
-    const phoneticSpelling = 'OLL-lder'
+    const phoneticSpelling = 'OLL-dehrr'
     const translatedMeaning = 'age (noun)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
+    return `${SwedishSpelling} : ${phoneticSpelling} ~ meaning: ${translatedMeaning}`
   }
 
   getEnglishExample () {

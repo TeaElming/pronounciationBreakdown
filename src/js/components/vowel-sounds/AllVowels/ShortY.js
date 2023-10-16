@@ -10,7 +10,7 @@ export class ShortY extends BaseVowel {
     const SwedishSpelling = 'yrke'
     const phoneticSpelling = 'ihrr-keh'
     const translatedMeaning = 'profession (noun)'
-    return `${SwedishSpelling} : '${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
+    return `${SwedishSpelling} : ${phoneticSpelling} ~ meaning: ${translatedMeaning}`
   }
 
   getEnglishExample () {

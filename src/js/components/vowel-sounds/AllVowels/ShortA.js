@@ -12,7 +12,7 @@ export class ShortA extends BaseVowel {
     const SwedishSpelling = 'affär'
     const phoneticSpelling = 'ahff-AIR'
     const translatedMeaning = 'shop (noun)'
-    return `${SwedishSpelling} : ''${phoneticSpelling}' ~ meaning: ${translatedMeaning}`
+    return `${SwedishSpelling} : ${phoneticSpelling} ~ meaning: ${translatedMeaning}`
   }
 
   /* Override */
