@@ -1,5 +1,5 @@
 import test from 'ava'
-import { ConsonantL } from '../../../src/js/components/consonant-sounds/AlLConsonantSounds/ConsonantL.js'
+import { ConsonantL } from '../../../src/js/components/consonant-sounds/ConsonantSounds/ConsonantL.js'
 
 // Test for the followsLjRule method
 test('consonantL - followsLjRule with lj', t => {

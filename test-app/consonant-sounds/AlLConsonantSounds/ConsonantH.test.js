@@ -1,15 +1,15 @@
 import test from 'ava'
-import { ConsonantH } from '../../../src/js/components/consonant-sounds/AlLConsonantSounds/ConsonantH.js'
+import { ConsonantH } from '../../../src/js/components/consonant-sounds/ConsonantSounds/ConsonantH.js'
 
 // Test for the hjRule method
 test('consonantH - hjRule with hj', t => {
   const instance = new ConsonantH('hjord')
-  t.true(instance.hjRule()) // 'hj' follows the hj rule, expect true
+  t.true(instance.followsHjRule()) // 'hj' follows the hj rule, expect true
 })
 
 test('consonantH - hjRule without hj', t => {
   const instance = new ConsonantH('hall')
-  t.false(instance.hjRule()) // 'hall' does not follow the hj rule, expect false
+  t.false(instance.followsHjRule()) // 'hall' does not follow the hj rule, expect false
 })
 
 // Test for the getSound method

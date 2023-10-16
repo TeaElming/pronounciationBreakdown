@@ -1,5 +1,5 @@
 import test from 'ava'
-import { ConsonantG } from '../../../src/js/components/consonant-sounds/AlLConsonantSounds/ConsonantG.js'
+import { ConsonantG } from '../../../src/js/components/consonant-sounds/ConsonantSounds/ConsonantG.js'
 
 // Test for the isSoftVowel method
 test('consonantG - isSoftVowel with soft vowel', t => {
