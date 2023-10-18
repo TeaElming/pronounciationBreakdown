@@ -61,7 +61,7 @@ export class PhonicsComponent extends HTMLElement {
   /**
    * Creates an instance of PhonicsComponent.
    */
-  constructor() {
+  constructor () {
     super()
 
     this.attachShadow({ mode: 'open' }).appendChild(templatePhonicsComponent.content.cloneNode(true))
@@ -83,7 +83,7 @@ export class PhonicsComponent extends HTMLElement {
   /**
    * Called after the element is inserted into the DOM.
    */
-  connectedCallback() {
+  connectedCallback () {
     this.consonantButton.addEventListener('click', this.insertConsonantComponent)
     this.vowelButton.addEventListener('click', this.insertVowelComponent)
     this.combinedButton.addEventListener('click', this.insertCombinedComponent)
@@ -92,7 +92,7 @@ export class PhonicsComponent extends HTMLElement {
   /**
    * Called after the element has been removed from the DOM.
    */
-  disconnectedCallback() {
+  disconnectedCallback () {
     this.consonantButton.removeEventListener('click', this.insertConsonantComponent)
     this.vowelButton.removeEventListener('click', this.insertVowelComponent)
     this.combinedButton.removeEventListener('click', this.insertCombinedComponent)
@@ -101,7 +101,7 @@ export class PhonicsComponent extends HTMLElement {
   /**
    * Clears the information div.
    */
-  clearInfoDiv() {
+  clearInfoDiv () {
     this.infoDiv.innerHTML = ''
   }
 
@@ -112,7 +112,7 @@ export class PhonicsComponent extends HTMLElement {
    * @param {string} word The word to be set.
    * @returns {HTMLElement} The prepared component.
    */
-  prepareComponent(component, word) {
+  prepareComponent (component, word) {
     component.setWord(word)
     return component
   }
@@ -122,7 +122,7 @@ export class PhonicsComponent extends HTMLElement {
    *
    * @returns {boolean} True if the input field is empty, false otherwise.
    */
-  handleEmptyInput() {
+  handleEmptyInput () {
     if (this.inputField.value === '') {
       this.infoDiv.textContent = 'Please enter a word.'
       return true // Indicates that the input is empty
@@ -133,7 +133,7 @@ export class PhonicsComponent extends HTMLElement {
   /**
    * Inserts the consonant component.
    */
-  insertConsonantComponent() {
+  insertConsonantComponent () {
     this.clearInfoDiv()
     if (this.handleEmptyInput()) {
       return
@@ -145,7 +145,7 @@ export class PhonicsComponent extends HTMLElement {
   /**
    * Inserts the vowel component.
    */
-  insertVowelComponent() {
+  insertVowelComponent () {
     this.clearInfoDiv()
     if (this.handleEmptyInput()) {
       return
@@ -157,7 +157,7 @@ export class PhonicsComponent extends HTMLElement {
   /**
    * Inserts the combined component.
    */
-  insertCombinedComponent() {
+  insertCombinedComponent () {
     this.clearInfoDiv()
     if (this.handleEmptyInput()) {
       return
