@@ -12,10 +12,10 @@ template1.innerHTML = `
 
 #vowelSound {
   display: flex;            /* Use flexbox */
+  justify-content: center;
   align-items: flex-start;      /* Vertically align items in the center */
 }
 </style>
-
 
 
 <div>

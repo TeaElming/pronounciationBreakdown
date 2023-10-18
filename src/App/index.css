@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Reset some default browser styles */
@@ -18,7 +19,7 @@ body {
 
 /* Center the header text */
 header {
-  background-color: #333;
+  background-color: #3a5a40;
   color: #fff;
   padding: 10px;
   position: fixed;
@@ -37,11 +38,12 @@ main {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background-color: #f1f1f0;
 }
 
 
 footer {
-  background-color: #333;
+  background-color: #3a5a40;
   color: #fff;
   padding: 10px;
   position: fixed;
