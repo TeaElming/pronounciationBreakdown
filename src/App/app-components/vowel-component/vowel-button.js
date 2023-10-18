@@ -2,6 +2,22 @@ import { SwedishPhonicsChecker } from '../../../js/Module/swedish-phonics-module
 
 const templateVowelButton = document.createElement('template')
 templateVowelButton.innerHTML = `
+<style>
+  /* Style for vowelButton */
+  #vowelButton {
+    padding: 5px;
+    margin: 5px;
+  }
+
+  /* Style for additionalButtons */
+  #additionalButtons button {
+    width: auto; /* Let the content determine the width */
+    display: inline-block; /* Make buttons inline-block to have the same width */
+    margin-right: 10px; /* Add some spacing between buttons */
+  }
+</style>
+
+
 <div>
   <button id="vowelButton"></button>
   <div id="additionalButtons">

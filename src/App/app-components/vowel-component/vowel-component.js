@@ -7,9 +7,12 @@ template1.innerHTML = `
 <style>
 #vowelSound {
   display: flex;            /* Use flexbox */
-  align-items: center;      /* Vertically align items in the center */
+  align-items: flex-start;      /* Vertically align items in the center */
 }
 </style>
+
+
+
 <div>
   <h1>Vowel Checker</h1>
   <p>Capital letters represent long vowel sounds, whereas lowercase letters represent short vowel sounds. Click the individual letters to find out more.</p>
@@ -94,7 +97,7 @@ export class VowelComponent extends HTMLElement {
     const phoneticSpelling = this.swedishPhonicsChecker.phoneticVowelSpelling(this.inputWord)
 
     const phoneticSpellingText = document.createElement('p')
-    phoneticSpellingText.innerHTML = phoneticSpelling
+    phoneticSpellingText.innerHTML = `The phonetic spelling of ${this.inputWord} is ${phoneticSpelling}`
 
     this.phoneticSpellingDiv.appendChild(phoneticSpellingText)
   }

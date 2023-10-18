@@ -10,12 +10,14 @@ header {
   background-color: #333; /* Adjust the color as needed */
   color: #fff; /* Text color */
   padding: 10px;
+  margin-bottom: 10px;
   position: fixed;
   top: 0;
   width: 100%;
 }
 
 main {
+  margin-top: 20px;
   padding: 20px;
   padding-top: 80px; /* Adjust based on header height */
   padding-bottom: 60px; /* Adjust based on footer height */
