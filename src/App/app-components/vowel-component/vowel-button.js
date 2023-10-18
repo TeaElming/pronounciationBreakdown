@@ -3,6 +3,11 @@ import { SwedishPhonicsChecker } from '../../../js/Module/swedish-phonics-module
 const templateVowelButton = document.createElement('template')
 templateVowelButton.innerHTML = `
 <style>
+ #wholeButton {
+  box-shadow: 0 0px 1px rgba(0,0,0,0.1);
+  margin: 2px;
+ }
+
   /* Style for vowelButton */
   #vowelButton {
     padding: 5px;
@@ -18,7 +23,7 @@ templateVowelButton.innerHTML = `
 </style>
 
 
-<div>
+<div id="wholeButton">
   <button id="vowelButton"></button>
   <div id="additionalButtons">
     <div id="vowelSound">

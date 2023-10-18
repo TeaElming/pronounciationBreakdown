@@ -45,7 +45,7 @@ export class VowelComponent extends HTMLElement {
     this.attachShadow({ mode: 'open' }).appendChild(template1.content.cloneNode(true))
 
     this.swedishPhonicsChecker = new SwedishPhonicsChecker()
-    this.inputWord = 'hehe'
+    this.inputWord = ''
 
     this.vowelSoundDiv = this.shadowRoot.querySelector('#vowelSound')
     this.phoneticSpellingDiv = this.shadowRoot.querySelector('#phoneticSpelling')
