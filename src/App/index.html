@@ -7,9 +7,9 @@
 
   <script type="module" src="../js/Module/swedish-phonics-module.js"></script>
 
-  <script type="module" src="../App/app-components/consonant-component/consonant-component.js"></script>
-  <script type="module" src="../App/app-components/vowel-component/vowel-button.js"></script>
-  <script type="module" src="../App/app-components/vowel-component/vowel-component.js"></script>
+
+
+  <script type="module" src="../App/app-components/combined-component/phonics-component.js"></script>
 
   <title>App</title>
 </head>
@@ -22,22 +22,8 @@
   </nav>
   <main>
     <h2>Main</h2>
-    <form action="submit">
-      <label for="inputWord">Enter a word</label>
-      <input type="text" name="inputWord" id="inputWord">
-      <input type="submit" value="See initial consonant sound">
-      <input type="submit" value="Identify vowel sounds">
-    </form>
-    <div id="vowelInformation">
-      <p>Here you will see vowel information</p>
-    </div>
 
-    <div id="consonantInformation">
-      <p>Here you will see consonant information</p>
-    </div>
-    <consonant-component>consonant</consonant-component>
-    <vowel-button>vowel</vowel-button>
-    <vowel-component></vowel-component>
+    <phonics-component> </phonics-component>
 
   </main>
   <footer>

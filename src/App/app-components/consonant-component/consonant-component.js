@@ -41,7 +41,6 @@ export class ConsonantComponent extends HTMLElement {
    * Called after the element is inserted into the DOM.
    */
   connectedCallback () {
-    console.log('connectedCallback called')
     this.insertConsonantSound()
     this.insertPhoneticSpelling()
   }

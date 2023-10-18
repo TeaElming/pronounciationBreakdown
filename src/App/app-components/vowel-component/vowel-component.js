@@ -1,4 +1,6 @@
 import { SwedishPhonicsChecker } from '../../../js/Module/swedish-phonics-module.js'
+// eslint-disable-next-line no-unused-vars
+import { VowelButton } from './vowel-button.js'
 
 const template1 = document.createElement('template')
 template1.innerHTML = `
@@ -29,16 +31,37 @@ export class VowelComponent extends HTMLElement {
     this.attachShadow({ mode: 'open' }).appendChild(template1.content.cloneNode(true))
 
     this.swedishPhonicsChecker = new SwedishPhonicsChecker()
-    this.inputWord = 'rolig'
+    this.inputWord = 'hehe'
 
     this.vowelSoundDiv = this.shadowRoot.querySelector('#vowelSound')
     this.phoneticSpellingDiv = this.shadowRoot.querySelector('#phoneticSpelling')
   }
 
   /**
-   * Sets the vowel to be checked.
+   * Called after the element is inserted into the DOM.
    */
   connectedCallback () {
+    this.updateContent()
+  }
+
+  /**
+   * Sets the input word.
+   *
+   * @param {string} word The word to be checked.
+   */
+  setWord (word) {
+    this.inputWord = word
+    this.updateContent()
+  }
+
+  /**
+   * Updates the content of the component.
+   */
+  updateContent () {
+    // Clear previous content
+    this.vowelSoundDiv.innerHTML = ''
+    this.phoneticSpellingDiv.innerHTML = ''
+
     this.generateVowelButtons()
     this.generatePhoneticSpelling()
   }
@@ -56,15 +79,6 @@ export class VowelComponent extends HTMLElement {
       vowelButton.setVowel(vowel)
       this.vowelSoundDiv.appendChild(vowelButton)
     })
-  }
-
-  /**
-   * Sets the input word.
-   *
-   * @param {string} word The word to be checked.
-   */
-  setInputWord (word) {
-    this.inputWord = word
   }
 
   /**
