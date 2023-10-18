@@ -113,10 +113,26 @@ export class PhonicsComponent extends HTMLElement {
   }
 
   /**
+   * Helper function to handle empty input field.
+   *
+   * @returns {boolean} True if the input field is empty, false otherwise.
+   */
+  handleEmptyInput () {
+    if (this.inputField.value === '') {
+      this.infoDiv.textContent = 'Please enter a word.'
+      return true // Indicates that the input is empty
+    }
+    return false // Indicates that the input is not empty
+  }
+
+  /**
    * Inserts the consonant component.
    */
   insertConsonantComponent () {
     this.clearInfoDiv()
+    if (this.handleEmptyInput()) {
+      return
+    }
     const consonantComponent = this.prepareComponent(document.createElement('consonant-component'), this.inputField.value)
     this.infoDiv.appendChild(consonantComponent)
   }
@@ -126,6 +142,9 @@ export class PhonicsComponent extends HTMLElement {
    */
   insertVowelComponent () {
     this.clearInfoDiv()
+    if (this.handleEmptyInput()) {
+      return
+    }
     const vowelComponent = this.prepareComponent(document.createElement('vowel-component'), this.inputField.value)
     this.infoDiv.appendChild(vowelComponent)
   }
@@ -135,6 +154,9 @@ export class PhonicsComponent extends HTMLElement {
    */
   insertCombinedComponent () {
     this.clearInfoDiv()
+    if (this.handleEmptyInput()) {
+      return
+    }
     const combinedDiv = document.createElement('div')
     const consonantSpelling = this.swedishPhonicsChecker.phoneticConsonantSpelling(this.inputField.value)
     const vowelSpelling = this.swedishPhonicsChecker.phoneticVowelSpelling(consonantSpelling)

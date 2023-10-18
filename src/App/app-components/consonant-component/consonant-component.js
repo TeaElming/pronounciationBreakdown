@@ -14,6 +14,11 @@ templateConsonantComponent.innerHTML = `
   </div>
   <div id="phoneticSpelling">
   </div>
+  <div id="consonantInformation">
+    <p>There are two main consonant sounds to be aware of: ‘sj’ and ‘tj’. The following pronunciation advice are for native English speakers. If you are a native speaker of another language, you may find that the pronunciation advice below is not helpful.</p>
+    <p><i>sj<i> – think ‘hw’. The word ‘sju’ is pronounced ‘hwoo’ – it is an odd sound in the back of your throat, almost like the wind whistling in the trees.</p>
+    <p><i>tj</i> – think ‘sh’ as in ‘shop’. The Swedish word for ‘twenty’ is ‘tjugo’, pronounced ‘SHOE-goh.
+</div>
 </div> `
 
 /**
@@ -35,6 +40,8 @@ export class ConsonantComponent extends HTMLElement {
     this.wordToCheck = 'hej'
     this.soundDiv = this.shadowRoot.querySelector('#consonantSound')
     this.spellingDiv = this.shadowRoot.querySelector('#phoneticSpelling')
+
+    this.consonantInformationDiv = this.shadowRoot.querySelector('#consonantInformation')
   }
 
   /**

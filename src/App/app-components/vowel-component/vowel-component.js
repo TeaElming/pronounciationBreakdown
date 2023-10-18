@@ -12,9 +12,15 @@ template1.innerHTML = `
 </style>
 <div>
   <h1>Vowel Checker</h1>
+  <p>Capital letters represent long vowel sounds, whereas lowercase letters represent short vowel sounds. Click the individual letters to find out more.</p>
   <div id="vowelSound">
   </div>
   <div id="phoneticSpelling">
+  </div>
+  <div id="vowelInformation">
+  <h3>Information about vowels</h3>
+    <p>There are 9 vowels in the Swedish language, but 16 vowel sounds. Each vowel has a long and a short sound, which corresponds to the amount of emphasis that should be placed on the vowel. There are a couple of duplicates for the short sounds, so the letters ‘e’ and ‘ä’ share the same short sound, whereas the letters ‘o’ and ‘å’ share the same short sound. Please note that the long sounds for these vowels are completely different. </p>
+    <p>The Swedish alphabet contains three additional vowels at the end of the alphabet, ÅÄÖ. Although these bear resemblance to the letters A and O in terms of appearance, they are completely different, and should not be treated as variations of one another. These are individual letters, and they should be treated as such.  </p>
   </div>
 </div> `
 
