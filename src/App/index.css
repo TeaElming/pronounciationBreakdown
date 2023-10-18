@@ -36,9 +36,9 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Vertically center contents of main */
   text-align: center;
 }
+
 
 footer {
   background-color: #333;
