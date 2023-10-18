@@ -4,10 +4,10 @@ const templateVowelButton = document.createElement('template')
 templateVowelButton.innerHTML = `
 <div>
   <button id="vowelButton"></button>
-  div id="additionalButtons">
+  <div id="additionalButtons">
     <div id="vowelSound">
       <button id="buttonVowelSound">Vowel sound</button>
-      <p id="vowelSoundTest></p>
+      <p id="vowelSoundText"></p>
     </div>
     <div id="swedishExample">
       <button id="buttonSwedishExample">Swedish example</button>
@@ -18,7 +18,7 @@ templateVowelButton.innerHTML = `
       <p id="englishExampleText"></p>
     </div>
   </div>
-</div> `
+</div>`
 
 /**
  * This is a custom element that checks the vowel sound of a Swedish word.
@@ -32,6 +32,8 @@ export class VowelButton extends HTMLElement {
 
     this.attachShadow({ mode: 'open' }).appendChild(templateVowelButton.content.cloneNode(true))
 
+    this.swedishPhonicsChecker = new SwedishPhonicsChecker()
+
     this.vowel = 'a'
     this.vowelButton = this.shadowRoot.querySelector('#vowelButton')
     this.additionalButtons = this.shadowRoot.querySelector('#additionalButtons')
@@ -39,19 +41,50 @@ export class VowelButton extends HTMLElement {
     this.buttonSwedishExample = this.shadowRoot.querySelector('#buttonSwedishExample')
     this.buttonEnglishExample = this.shadowRoot.querySelector('#buttonEnglishExample')
 
-    // Add event listener to the vowelButton element
-    this.vowelButton.addEventListener('click', () => {
-      // Toggle the visibility of additionalButtons when the vowel button is clicked
-      this.additionalButtons.style.display =
-        this.additionalButtons.style.display === 'none' ? 'block' : 'none'
+    this.additionalButtons.style.display = 'none'
 
-      // Display the appropriate content in the <p> elements
-      if (this.additionalButtons.style.display === 'block') {
-        this.displayVowelSound()
-        this.displaySwedishExample()
-        this.displayEnglishExample()
+    this.vowelButton.addEventListener('click', () => {
+      if (this.additionalButtons.style.display === 'none') {
+        this.additionalButtons.style.display = 'block'
+        // Reset the visibility of all text elements when displaying additionalButtons
+        this.shadowRoot.querySelector('#vowelSoundText').style.display = 'block'
+        this.shadowRoot.querySelector('#swedishExampleText').style.display = 'block'
+        this.shadowRoot.querySelector('#englishExampleText').style.display = 'block'
+      } else {
+        this.additionalButtons.style.display = 'none'
       }
     })
+
+    // Add event listeners to the inner buttons
+    this.buttonVowelSound.addEventListener('click', () => {
+      this.toggleVisibility('#vowelSoundText')
+    })
+    this.buttonSwedishExample.addEventListener('click', () => {
+      this.toggleVisibility('#swedishExampleText')
+    })
+    this.buttonEnglishExample.addEventListener('click', () => {
+      this.toggleVisibility('#englishExampleText')
+    })
+  }
+
+  /**
+   * Called after the element is inserted into the DOM.
+   */
+  connectedCallback () {
+    this.setVowelButton()
+    this.displayVowelSound()
+    this.displaySwedishExample()
+    this.displayEnglishExample()
+  }
+
+  /**
+   * Toggle tool for any element.
+   *
+   * @param {string} selector - The selector to toggle visibility of.
+   */
+  toggleVisibility (selector) {
+    const element = this.shadowRoot.querySelector(selector)
+    element.style.display = element.style.display === 'none' ? 'block' : 'none'
   }
 
   /**
@@ -74,7 +107,7 @@ export class VowelButton extends HTMLElement {
    * Inserts the vowel sound of the vowel.
    */
   displayVowelSound () {
-    const vowelSound = SwedishPhonicsChecker.getVowelSound(this.vowel)
+    const vowelSound = this.swedishPhonicsChecker.returnVowelSoundExplanation(this.vowel)
     this.shadowRoot.querySelector('#vowelSoundText').textContent = `The vowel sound is: ${vowelSound}`
   }
 
@@ -82,7 +115,7 @@ export class VowelButton extends HTMLElement {
    * Inserts the Swedish example of the vowel.
    */
   displaySwedishExample () {
-    const swedishExample = SwedishPhonicsChecker.getSwedishExample(this.vowel)
+    const swedishExample = this.swedishPhonicsChecker.returnVowelExample(this.vowel)
     this.shadowRoot.querySelector('#swedishExampleText').textContent = `The Swedish example is: ${swedishExample}`
   }
 
@@ -90,7 +123,7 @@ export class VowelButton extends HTMLElement {
    * Inserts the English example of the vowel.
    */
   displayEnglishExample () {
-    const englishExample = SwedishPhonicsChecker.getEnglishExample(this.vowel)
+    const englishExample = this.swedishPhonicsChecker.returnVowelEnglishExample(this.vowel)
     this.shadowRoot.querySelector('#englishExampleText').textContent = `The English example is: ${englishExample}`
   }
 }
