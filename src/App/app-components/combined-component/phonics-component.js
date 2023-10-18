@@ -37,8 +37,8 @@ templatePhonicsComponent.innerHTML = `
 
             <!-- Three buttons underneath text box -->
             <div class="phonics-buttons">
-                <button type="button" id="consonantButton">Learn about consonants</button>
-                <button type="button" id="vowelButton">Learn about vowels</button>
+                <button type="button" id="consonantButton">Learn about the consonants</button>
+                <button type="button" id="vowelButton">Learn about the vowels</button>
                 <button type="button" id="combinedButton">See combined phonetic spelling</button>
             </div>
         </form>
