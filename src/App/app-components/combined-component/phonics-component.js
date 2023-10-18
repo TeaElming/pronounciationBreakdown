@@ -5,49 +5,54 @@ import { VowelComponent } from '../vowel-component/vowel-component.js'
 
 const templatePhonicsComponent = document.createElement('template')
 templatePhonicsComponent.innerHTML = `
-    <style>
-        /* You can style your component here. For now, I'll just keep it simple. */
-        .phonics-container {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            border: 1px solid #ccc;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+<style>
+  .phonics-container {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
 
-        .phonics-input {
-            margin-bottom: 20px;
-        }
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin: 0;
+    margin-bottom: 20px;
+  }
 
-        .phonics-buttons {
-            margin-bottom: 20px;
-        }
+  .phonics-buttons {
+      margin-bottom: 20px;
+  }
 
-        button {
-            margin-right: 10px;
-        }
-    </style>
+  button {
+      margin-right: 10px;
+  }
+</style>
 
-    <div class="phonics-container">
-        <!-- Form for input -->
-        <form class="phonics-form">
-            <!-- Input text field -->
-            <div class="phonics-input">
-                <input type="text" placeholder="Enter text here...">
-            </div>
 
-            <!-- Three buttons underneath text box -->
-            <div class="phonics-buttons">
-                <button type="button" id="consonantButton">Learn about the consonants</button>
-                <button type="button" id="vowelButton">Learn about the vowels</button>
-                <button type="button" id="combinedButton">See combined phonetic spelling</button>
-            </div>
-        </form>
+  <div class="phonics-container">
+      <!-- Form for input -->
+      <form class="phonics-form">
+          <!-- Input text field -->
+          <div class="phonics-input">
+              <input type="text" placeholder="Enter text here...">
+          </div>
 
-        <!-- Div for information -->
-        <div class="phonics-info">
-            <!-- Information will appear here -->
-        </div>
-    </div>
+          <!-- Three buttons underneath text box -->
+          <div class="phonics-buttons">
+              <button type="button" id="consonantButton">Learn about the consonants</button>
+              <button type="button" id="vowelButton">Learn about the vowels</button>
+              <button type="button" id="combinedButton">See combined phonetic spelling</button>
+          </div>
+      </form>
+
+      <!-- Div for information -->
+      <div class="phonics-info">
+          <!-- Information will appear here -->
+      </div>
+  </div>
 `
 /**
  * This is a custom element to identify phonetic sounds of Swedish words.
@@ -56,7 +61,7 @@ export class PhonicsComponent extends HTMLElement {
   /**
    * Creates an instance of PhonicsComponent.
    */
-  constructor () {
+  constructor() {
     super()
 
     this.attachShadow({ mode: 'open' }).appendChild(templatePhonicsComponent.content.cloneNode(true))
@@ -78,7 +83,7 @@ export class PhonicsComponent extends HTMLElement {
   /**
    * Called after the element is inserted into the DOM.
    */
-  connectedCallback () {
+  connectedCallback() {
     this.consonantButton.addEventListener('click', this.insertConsonantComponent)
     this.vowelButton.addEventListener('click', this.insertVowelComponent)
     this.combinedButton.addEventListener('click', this.insertCombinedComponent)
@@ -87,7 +92,7 @@ export class PhonicsComponent extends HTMLElement {
   /**
    * Called after the element has been removed from the DOM.
    */
-  disconnectedCallback () {
+  disconnectedCallback() {
     this.consonantButton.removeEventListener('click', this.insertConsonantComponent)
     this.vowelButton.removeEventListener('click', this.insertVowelComponent)
     this.combinedButton.removeEventListener('click', this.insertCombinedComponent)
@@ -96,7 +101,7 @@ export class PhonicsComponent extends HTMLElement {
   /**
    * Clears the information div.
    */
-  clearInfoDiv () {
+  clearInfoDiv() {
     this.infoDiv.innerHTML = ''
   }
 
@@ -107,7 +112,7 @@ export class PhonicsComponent extends HTMLElement {
    * @param {string} word The word to be set.
    * @returns {HTMLElement} The prepared component.
    */
-  prepareComponent (component, word) {
+  prepareComponent(component, word) {
     component.setWord(word)
     return component
   }
@@ -117,7 +122,7 @@ export class PhonicsComponent extends HTMLElement {
    *
    * @returns {boolean} True if the input field is empty, false otherwise.
    */
-  handleEmptyInput () {
+  handleEmptyInput() {
     if (this.inputField.value === '') {
       this.infoDiv.textContent = 'Please enter a word.'
       return true // Indicates that the input is empty
@@ -128,7 +133,7 @@ export class PhonicsComponent extends HTMLElement {
   /**
    * Inserts the consonant component.
    */
-  insertConsonantComponent () {
+  insertConsonantComponent() {
     this.clearInfoDiv()
     if (this.handleEmptyInput()) {
       return
@@ -140,7 +145,7 @@ export class PhonicsComponent extends HTMLElement {
   /**
    * Inserts the vowel component.
    */
-  insertVowelComponent () {
+  insertVowelComponent() {
     this.clearInfoDiv()
     if (this.handleEmptyInput()) {
       return
@@ -152,7 +157,7 @@ export class PhonicsComponent extends HTMLElement {
   /**
    * Inserts the combined component.
    */
-  insertCombinedComponent () {
+  insertCombinedComponent() {
     this.clearInfoDiv()
     if (this.handleEmptyInput()) {
       return
