@@ -158,11 +158,14 @@ export class PhonicsComponent extends HTMLElement {
       return
     }
     const combinedDiv = document.createElement('div')
+    const title = document.createElement('h2')
+    title.textContent = 'Combined phonetic spelling'
+    this.infoDiv.appendChild(title)
+
     const consonantSpelling = this.swedishPhonicsChecker.phoneticConsonantSpelling(this.inputField.value)
     const vowelSpelling = this.swedishPhonicsChecker.phoneticVowelSpelling(consonantSpelling)
 
     combinedDiv.innerHTML = `The phonetic spelling of ${this.inputField.value} is ${vowelSpelling}`
-
     this.infoDiv.appendChild(combinedDiv)
   }
 }

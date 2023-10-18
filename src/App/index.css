@@ -1,53 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Reset some default browser styles */
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100vh; /* Make sure it covers the full viewport height */
 }
 
-/* Define styles for header, main, and footer */
+body {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+}
+
+/* Center the header text */
 header {
-  background-color: #333; /* Adjust the color as needed */
-  color: #fff; /* Text color */
+  background-color: #333;
+  color: #fff;
   padding: 10px;
-  margin-bottom: 10px;
   position: fixed;
   top: 0;
   width: 100%;
+  text-align: center;
 }
 
 main {
-  margin-top: 20px;
-  padding: 20px;
-  padding-top: 80px; /* Adjust based on header height */
-  padding-bottom: 60px; /* Adjust based on footer height */
-  overflow-y: auto; /* Enable vertical scrolling if content overflows */
-  max-height: calc(100% - 140px); /* Calculate available height */
+  flex: 1; /* Let it grow and fill available space between header and footer */
+  padding: 80px 20px 60px; /* Consolidated padding */
+  overflow-y: auto;
+  max-width: 2000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Vertically center contents of main */
+  text-align: center;
 }
 
 footer {
-  background-color: #333; /* Adjust the color as needed */
-  color: #fff; /* Text color */
+  background-color: #333;
+  color: #fff;
   padding: 10px;
   position: fixed;
   bottom: 0;
   width: 100%;
+  text-align: center;
 }
 
 /* Style the main content */
-.content {
-  max-width: 1000px; /* Adjust the maximum content width as needed */
+.informationDiv {
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-x: auto;
+  white-space: normal;
 }
 
 /* Responsive design - adjust as needed */
-@media screen and (max-width: 768px) {
-  .content {
-      padding: 10px;
+@media screen and (max-width: 380px) {
+  .informationDiv {
+    max-width: 100%;
   }
-}
-
-/* Avoid horizontal scrolling */
-body {
-  overflow-x: hidden;
 }

@@ -3,13 +3,13 @@ import { SwedishPhonicsChecker } from '../../../js/Module/swedish-phonics-module
 const templateConsonantComponent = document.createElement('template')
 templateConsonantComponent.innerHTML = `
 <style>
-  div {
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
+  #consonantInformation {
+    background-color: #f7f3f3;
+    padding: 5px;
   }
 </style>
 <div>
-  <h1>Consonant Checker</h1>
+  <h2>Consonant Checker</h2>
   <div id="consonantSound">
   </div>
   <div id="phoneticSpelling">

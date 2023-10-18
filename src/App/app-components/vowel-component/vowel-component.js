@@ -5,6 +5,11 @@ import { VowelButton } from './vowel-button.js'
 const template1 = document.createElement('template')
 template1.innerHTML = `
 <style>
+#vowelInformation {
+  background-color: #f7f3f3;
+  padding: 5px;
+}
+
 #vowelSound {
   display: flex;            /* Use flexbox */
   align-items: flex-start;      /* Vertically align items in the center */
@@ -14,7 +19,7 @@ template1.innerHTML = `
 
 
 <div>
-  <h1>Vowel Checker</h1>
+  <h2>Vowel Checker</h2>
   <p>Capital letters represent long vowel sounds, whereas lowercase letters represent short vowel sounds. Click the individual letters to find out more.</p>
   <div id="vowelSound">
   </div>
