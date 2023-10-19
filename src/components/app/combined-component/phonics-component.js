@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { SwedishPhonicsChecker } from '../../../js/Module/swedish-phonics-module.js'
-import { ConsonantComponent } from '../consonant-component/consonant-component.js'
-import { VowelComponent } from '../vowel-component/vowel-component.js'
+import { ConsonantComponent } from '../../consonant-component/consonant-component.js'
+import { VowelComponent } from '../../vowel-component/vowel-component.js'
 
 const templatePhonicsComponent = document.createElement('template')
 templatePhonicsComponent.innerHTML = `
