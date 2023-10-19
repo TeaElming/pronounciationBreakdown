@@ -1,12 +1,12 @@
 /* eslint-disable jsdoc/require-jsdoc */
 import { WordSplitter } from '../../word-splitter.js'
-import { ConsonantC } from './ConsonantSounds/ConsonantC.js'
-import { ConsonantD } from './ConsonantSounds/ConsonantD.js'
-import { ConsonantG } from './ConsonantSounds/ConsonantG.js'
-import { ConsonantH } from './ConsonantSounds/ConsonantH.js'
-import { ConsonantK } from './ConsonantSounds/ConsonantK.js'
-import { ConsonantL } from './ConsonantSounds/ConsonantL.js'
-import { ConsonantS } from './ConsonantSounds/ConsonantS.js'
+import { ConsonantC } from './consonant-sounds/ConsonantC.js'
+import { ConsonantD } from './consonant-sounds/ConsonantD.js'
+import { ConsonantG } from './consonant-sounds/ConsonantG.js'
+import { ConsonantH } from './consonant-sounds/ConsonantH.js'
+import { ConsonantK } from './consonant-sounds/ConsonantK.js'
+import { ConsonantL } from './consonant-sounds/ConsonantL.js'
+import { ConsonantS } from './consonant-sounds/ConsonantS.js'
 
 export class ConsonantSoundIdentifier {
   constructor () {

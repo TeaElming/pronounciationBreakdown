@@ -1,4 +1,4 @@
-import { SwedishPhonicsChecker } from '../../../js/Module/swedish-phonics-module.js'
+import { SwedishPhonicsChecker } from '../../modules/swedish-phonics-module.js'
 
 const templateConsonantComponent = document.createElement('template')
 templateConsonantComponent.innerHTML = `
