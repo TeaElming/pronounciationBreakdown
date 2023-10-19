@@ -3,7 +3,7 @@ import { WordSplitter } from '../../Module/word-splitter.js'
 
 export class VowelSoundIdentifier {
   constructor () {
-    this.allVowels = ['a', 'e', 'i', 'u', 'y', 'å', 'ä', 'ö']
+    this.allVowels = ['a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö']
     this.wordSplitter = new WordSplitter()
   }
 
