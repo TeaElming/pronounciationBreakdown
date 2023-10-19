@@ -1,8 +1,8 @@
 /* eslint-disable jsdoc/require-jsdoc */
-import { ConsonantSoundIdentifier } from '../components/consonant-sounds/consonant-sound-identifier.js'
+import { ConsonantSoundIdentifier } from './phonetic-components/consonant-components/consonant-sound-identifier.js'
 import { WordSplitter } from './word-splitter.js'
-import { VowelSoundIdentifier } from '../components/vowel-sounds/Vowel-Sound-Identifier.js'
-import { VowelPhoneticallyExplained } from '../components/vowel-sounds/Vowel-Phonetically-Explained.js'
+import { VowelSoundIdentifier } from './phonetic-components/vowel-components/vowel-identifier.js.js'
+import { VowelPhoneticallyExplained } from './phonetic-components/vowel-components/vowel-mapper.js'
 
 export class SwedishPhonicsChecker {
   constructor () {

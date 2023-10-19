@@ -1,5 +1,5 @@
 /* eslint-disable jsdoc/require-jsdoc */
-import { BaseVowel } from '../Base-Vowel.js'
+import { BaseVowel } from '../base-vowel.js'
 
 export class ShortI extends BaseVowel {
   getSound () {

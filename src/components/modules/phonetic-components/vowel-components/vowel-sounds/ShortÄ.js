@@ -1,19 +1,19 @@
 /* eslint-disable jsdoc/require-jsdoc */
-import { BaseVowel } from '../Base-Vowel.js'
+import { BaseVowel } from '../base-vowel.js'
 
-export class ShortE extends BaseVowel {
+export class ShortÄ extends BaseVowel {
   getSound () {
     return 'eh'
   }
 
   getSwedishExample () {
-    const SwedishSpelling = 'eld'
-    const phoneticSpelling = 'ehlld'
-    const translatedMeaning = 'fire (noun)'
+    const SwedishSpelling = 'äpple'
+    const phoneticSpelling = 'ehp-luh'
+    const translatedMeaning = 'apple (noun)'
     return `${SwedishSpelling} : ${phoneticSpelling} ~ meaning: ${translatedMeaning}`
   }
 
   getEnglishExample () {
-    return 'neck'
+    return 'bed'
   }
 }
