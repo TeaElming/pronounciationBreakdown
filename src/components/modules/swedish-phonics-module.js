@@ -2,13 +2,13 @@
 import { ConsonantSoundIdentifier } from './phonetic-components/consonant-components/consonant-sound-identifier.js'
 import { WordSplitter } from './word-splitter.js'
 import { VowelSoundIdentifier } from './phonetic-components/vowel-components/vowel-identifier.js'
-import { VowelPhoneticallyExplained } from './phonetic-components/vowel-components/vowel-mapper.js'
+import { VowelMapper } from './phonetic-components/vowel-components/vowel-mapper.js'
 
 export class SwedishPhonicsChecker {
   constructor () {
     this.consonantSoundIdentifier = new ConsonantSoundIdentifier()
     this.vowelSoundIdentifier = new VowelSoundIdentifier()
-    this.vowelExplainer = new VowelPhoneticallyExplained()
+    this.vowelExplainer = new VowelMapper()
     this.wordSplitter = new WordSplitter()
   }
 

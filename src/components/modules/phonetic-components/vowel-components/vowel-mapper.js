@@ -19,7 +19,7 @@ import { LongÅ } from './vowel-sounds/LongÅ.js'
 import { LongÄ } from './vowel-sounds/LongÄ.js'
 import { LongÖ } from './vowel-sounds/LongÖ.js'
 
-export class VowelPhoneticallyExplained {
+export class VowelMapper {
   constructor () {
     this.vowelMapping = {
       a: ShortA,
