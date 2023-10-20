@@ -28,16 +28,7 @@ Consonant sounds affected by soft vowels:
 
 **Soft vowels:** *E, I, Y, Ä, Ö*
 
-# How to interact with the module
-The user should only have to interact with the file called 'swedish-phonics-module.js'. It can create a new instance of the class SwedishPhonicsIdentifier() and use the methods included to do the following:
-1. returnAllWordsInString(input) - Splits a string into separate words
-2. returnInitialConsonantSound(input) - Provides the initial phonetic sound of a word.
-3. phoneticConsonantSpelling(input) - Provides the phonetic consonant spelling of a word.
-4. returnAllVowelSounds(input) - Provides the vowel sounds included in a word. (Long vowel sounds will be capitalised, while short ones remain lower case)
-5. phoneticVowelSpelling(input) - Provides the word rewritten to capitalise vowels that have a long vowel sound.
-6. returnVowelSoundExplanation(input) - Returns an explanation of the sound, e.g. 'e' is pronunced 'eh'
-7. returnVowelExample(input) - Returns an example word using the sound
-8. returnVowelEnglishExample(input) - Returns an example of an English word using the sound
+
 
 ## Example outputs using the methods above
 ![View Example](./reports/testImageConsole.png)

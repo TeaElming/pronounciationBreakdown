@@ -58,24 +58,32 @@ export class VowelSoundIdentifier {
   checkDuplicateIndex (wordSeparatedIntoLetters, indexNumberOfVowel) {
     if (wordSeparatedIntoLetters[indexNumberOfVowel + 1] === wordSeparatedIntoLetters[indexNumberOfVowel + 2]) {
       return true
+    } else {
+      return false
     }
   }
 
   checkForCK (wordSeparatedIntoLetters, indexNumberOfVowel) {
     if (wordSeparatedIntoLetters[indexNumberOfVowel + 1] === 'c' && wordSeparatedIntoLetters[indexNumberOfVowel + 2] === 'k') {
       return true
+    } else {
+      return false
     }
   }
 
   checkForCH (wordSeparatedIntoLetters, indexNumberOfVowel) {
     if (wordSeparatedIntoLetters[indexNumberOfVowel + 1] === 'c' && wordSeparatedIntoLetters[indexNumberOfVowel + 2] === 'h') {
       return true
+    } else {
+      return false
     }
   }
 
   checkLastIndex (wordSeparatedIntoLetters, indexNumberOfVowel) {
     if (!wordSeparatedIntoLetters[indexNumberOfVowel + 1]) {
       return true
+    } else {
+      return false
     }
   }
 }
