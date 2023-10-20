@@ -28,10 +28,30 @@ Create a new instance of the class SwedishPhonicsIdentifier() and work with the 
 In terminal: **npm run test**
 
 Unit tests have been written for each method in the module.
-![View passed tests](./reports/123tests.png)
+![View passed tests](./reports/138.png)
 
 For detailed views of tests, see:
 - [Swedish Phonics Module](./phonetic-components/__tests__/swedish-phonics-module.test.js)
 - [Consonant Sound Identifier](./phonetic-components/consonant-components/__tests__/consonant-sound-identifier.test.js)
 - [All individiual consonant test](./phonetic-components/consonant-components/__tests__/consonant-rules/)
-- [Vowel]
+- [Vowel Identifier](./phonetic-components/vowel-components/__tests__/vowel-identifier.test.js)
+- [Vowel Mapper](./phonetic-components/vowel-components/__tests__/vowel-mapper.test.js)
+- [All individual vowels](./phonetic-components/vowel-components/__tests__/all-vowels/)
+
+# Open Issues
+There are currently several limitations to the modules ability to correctly identify the phonics.
+
+## Consonant sounds
+- The module only identifies the intial consonant sound of a word. If the consonant is altered within a word, it is not detected.
+- Known exceptions are not stored or dealt with, for example 'kö'.
+- Homographs (words that are spelled the same but pronunced differently) are currenlty not addressed, e.g. 'kör' (choir) and 'kör' (driving)
+
+## Vowel sounds
+- Compound words are currently not dealt with, e.g. 'solljus' would be considered a short 'o'-sound, despite the word consisting of two parts sol-ljus.
+- If it is a noun, it must be entered in singular, undetermined form (e.g. '***katt***', not '*katter*' or '*katten*')
+- If it is a verb, it must be entered in its base (infinitive) form (e.g. ***'springa'***, not *'springer'*)
+- Strong verbs, where emphasis is placed on the last vowel syllable, are not accounted for and would generate false results (e.g. ***'begå'***)
+
+## Error handling
+There is currently no proper error handling implemented. There is a method available called catchTypeError(input) in the SwedishPhonicsChecker that is ready to be implemented. However, due to the nature of this method, which throws a TypeError if an incorrect argument is entered but does not catch it, this is something which should be improved.
+
