@@ -16,13 +16,13 @@ export class WordSplitter {
     return cleanedWords
   }
 
-  clearEverythingButLetters (word) {
-    return word.replace(/[^a-zA-ZåäöÅÄÖ]/g, ' ')
-  }
-
   separateLetters (word) {
     this.clearEverythingButLetters(word)
     const allLetters = word.split('')
     return allLetters
+  }
+
+  clearEverythingButLetters (word) {
+    return word.replace(/[^a-zA-ZåäöÅÄÖ]/g, ' ')
   }
 }

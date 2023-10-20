@@ -8,7 +8,7 @@ import { ConsonantK } from './consonant-sounds/ConsonantK.js'
 import { ConsonantL } from './consonant-sounds/ConsonantL.js'
 import { ConsonantS } from './consonant-sounds/ConsonantS.js'
 
-export class ConsonantSoundIdentifier {
+export class ConsonantMapper {
   constructor () {
     this.wordSplitter = new WordSplitter()
     this.consonantClasses = {

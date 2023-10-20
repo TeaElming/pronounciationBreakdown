@@ -7,43 +7,6 @@ export class VowelSoundIdentifier {
     this.wordSplitter = new WordSplitter()
   }
 
-  checkDuplicateIndex (wordSeparatedIntoLetters, indexNumberOfVowel) {
-    if (wordSeparatedIntoLetters[indexNumberOfVowel + 1] === wordSeparatedIntoLetters[indexNumberOfVowel + 2]) {
-      return true
-    }
-  }
-
-  checkForCK (wordSeparatedIntoLetters, indexNumberOfVowel) {
-    if (wordSeparatedIntoLetters[indexNumberOfVowel + 1] === 'c' && wordSeparatedIntoLetters[indexNumberOfVowel + 2] === 'k') {
-      return true
-    }
-  }
-
-  checkForCH (wordSeparatedIntoLetters, indexNumberOfVowel) {
-    if (wordSeparatedIntoLetters[indexNumberOfVowel + 1] === 'c' && wordSeparatedIntoLetters[indexNumberOfVowel + 2] === 'h') {
-      return true
-    }
-  }
-
-  checkLastIndex (wordSeparatedIntoLetters, indexNumberOfVowel) {
-    if (!wordSeparatedIntoLetters[indexNumberOfVowel + 1]) {
-      return true
-    }
-  }
-
-  checkCombinedShortSoundRequirements (wordSeparatedIntoLetters, indexNumberOfVowel) {
-    if (
-      this.checkDuplicateIndex(wordSeparatedIntoLetters, indexNumberOfVowel) ||
-      this.checkForCK(wordSeparatedIntoLetters, indexNumberOfVowel) ||
-      this.checkForCH(wordSeparatedIntoLetters, indexNumberOfVowel) ||
-      this.checkLastIndex(wordSeparatedIntoLetters, indexNumberOfVowel)
-    ) {
-      return true
-    } else {
-      return false
-    }
-  }
-
   identifyVowelSounds (word) {
     const identifiedLetters = this.wordSplitter.separateLetters(word.toLowerCase())
 
@@ -77,5 +40,42 @@ export class VowelSoundIdentifier {
       }
     }
     return rewrittenWord.join('')
+  }
+
+  checkCombinedShortSoundRequirements (wordSeparatedIntoLetters, indexNumberOfVowel) {
+    if (
+      this.checkDuplicateIndex(wordSeparatedIntoLetters, indexNumberOfVowel) ||
+      this.checkForCK(wordSeparatedIntoLetters, indexNumberOfVowel) ||
+      this.checkForCH(wordSeparatedIntoLetters, indexNumberOfVowel) ||
+      this.checkLastIndex(wordSeparatedIntoLetters, indexNumberOfVowel)
+    ) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  checkDuplicateIndex (wordSeparatedIntoLetters, indexNumberOfVowel) {
+    if (wordSeparatedIntoLetters[indexNumberOfVowel + 1] === wordSeparatedIntoLetters[indexNumberOfVowel + 2]) {
+      return true
+    }
+  }
+
+  checkForCK (wordSeparatedIntoLetters, indexNumberOfVowel) {
+    if (wordSeparatedIntoLetters[indexNumberOfVowel + 1] === 'c' && wordSeparatedIntoLetters[indexNumberOfVowel + 2] === 'k') {
+      return true
+    }
+  }
+
+  checkForCH (wordSeparatedIntoLetters, indexNumberOfVowel) {
+    if (wordSeparatedIntoLetters[indexNumberOfVowel + 1] === 'c' && wordSeparatedIntoLetters[indexNumberOfVowel + 2] === 'h') {
+      return true
+    }
+  }
+
+  checkLastIndex (wordSeparatedIntoLetters, indexNumberOfVowel) {
+    if (!wordSeparatedIntoLetters[indexNumberOfVowel + 1]) {
+      return true
+    }
   }
 }

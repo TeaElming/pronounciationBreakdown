@@ -1,14 +1,14 @@
 /* eslint-disable jsdoc/require-jsdoc */
-import { ConsonantSoundIdentifier } from './phonetic-components/consonant-components/consonant-sound-identifier.js'
+import { ConsonantMapper } from './phonetic-components/consonant-components/consonant-mapper.js'
 import { WordSplitter } from './word-splitter.js'
 import { VowelSoundIdentifier } from './phonetic-components/vowel-components/vowel-identifier.js'
 import { VowelMapper } from './phonetic-components/vowel-components/vowel-mapper.js'
 
 export class SwedishPhonicsChecker {
   constructor () {
-    this.consonantSoundIdentifier = new ConsonantSoundIdentifier()
+    this.consonantMapper = new ConsonantMapper()
     this.vowelSoundIdentifier = new VowelSoundIdentifier()
-    this.vowelExplainer = new VowelMapper()
+    this.vowelMapper = new VowelMapper()
     this.wordSplitter = new WordSplitter()
   }
 
@@ -21,11 +21,11 @@ export class SwedishPhonicsChecker {
   }
 
   returnInitialConsonantSound (wordToCheck) {
-    return this.consonantSoundIdentifier.identifyConsonantSound(wordToCheck)
+    return this.consonantMapper.identifyConsonantSound(wordToCheck)
   }
 
   phoneticConsonantSpelling (wordToCheck) {
-    return this.consonantSoundIdentifier.rewritePhonetically(wordToCheck)
+    return this.consonantMapper.rewritePhonetically(wordToCheck)
   }
 
   returnAllVowelSounds (wordToCheck) {
@@ -37,18 +37,15 @@ export class SwedishPhonicsChecker {
   }
 
   returnVowelSoundExplanation (vowel) {
-    // Error handling for ensuring only one vowel is entered
-    return this.vowelExplainer.getVowelSound(vowel)
+    return this.vowelMapper.getVowelSound(vowel)
   }
 
   returnVowelExample (vowel) {
-    // Error handling for ensuring only one vowel is entered
-    return this.vowelExplainer.getVowelSwedishExample(vowel)
+    return this.vowelMapper.getVowelSwedishExample(vowel)
   }
 
   returnVowelEnglishExample (vowel) {
-    // Error handling for ensuring only one vowel is entered
-    return this.vowelExplainer.getVowelEnglishExample(vowel)
+    return this.vowelMapper.getVowelEnglishExample(vowel)
   }
 
   catchTypeError (input) {
