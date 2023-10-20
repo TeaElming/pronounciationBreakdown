@@ -99,38 +99,6 @@ export class PhonicsComponent extends HTMLElement {
   }
 
   /**
-   * Clears the information div.
-   */
-  clearInfoDiv () {
-    this.infoDiv.innerHTML = ''
-  }
-
-  /**
-   * Prepares the component by setting the word before it's attached to the DOM.
-   *
-   * @param {HTMLElement} component The component to be prepared.
-   * @param {string} word The word to be set.
-   * @returns {HTMLElement} The prepared component.
-   */
-  prepareComponent (component, word) {
-    component.setWord(word)
-    return component
-  }
-
-  /**
-   * Helper function to handle empty input field.
-   *
-   * @returns {boolean} True if the input field is empty, false otherwise.
-   */
-  handleEmptyInput () {
-    if (this.inputField.value === '') {
-      this.infoDiv.textContent = 'Please enter a word.'
-      return true // Indicates that the input is empty
-    }
-    return false // Indicates that the input is not empty
-  }
-
-  /**
    * Inserts the consonant component.
    */
   insertConsonantComponent () {
@@ -138,6 +106,7 @@ export class PhonicsComponent extends HTMLElement {
     if (this.handleEmptyInput()) {
       return
     }
+    this.explainMultipleWords(this.inputField.value)
     const consonantComponent = this.prepareComponent(document.createElement('consonant-component'), this.inputField.value)
     this.infoDiv.appendChild(consonantComponent)
   }
@@ -172,6 +141,51 @@ export class PhonicsComponent extends HTMLElement {
 
     combinedDiv.innerHTML = `The phonetic spelling of ${this.inputField.value} is ${vowelSpelling}`
     this.infoDiv.appendChild(combinedDiv)
+  }
+
+  /**
+   * Utilises the return all words in string despite feature not having been implemented yet.
+   *
+   * @param {string} input from the user.
+   */
+  explainMultipleWords (input) {
+    if (this.swedishPhonicsChecker.returnAllWordsInString(input).length > 1) {
+      const explanationDiv = document.createElement('div')
+      explanationDiv.innerHTML = 'The app currently only supports one word at a time. You will only see information about the first word.'
+      this.infoDiv.appendChild(explanationDiv)
+    }
+  }
+
+  /**
+   * Clears the information div.
+   */
+  clearInfoDiv () {
+    this.infoDiv.innerHTML = ''
+  }
+
+  /**
+   * Prepares the component by setting the word before it's attached to the DOM.
+   *
+   * @param {HTMLElement} component The component to be prepared.
+   * @param {string} word The word to be set.
+   * @returns {HTMLElement} The prepared component.
+   */
+  prepareComponent (component, word) {
+    component.setWord(word)
+    return component
+  }
+
+  /**
+   * Helper function to handle empty input field.
+   *
+   * @returns {boolean} True if the input field is empty, false otherwise.
+   */
+  handleEmptyInput () {
+    if (this.inputField.value === '') {
+      this.infoDiv.textContent = 'Please enter a word.'
+      return true // Indicates that the input is empty
+    }
+    return false // Indicates that the input is not empty
   }
 }
 
