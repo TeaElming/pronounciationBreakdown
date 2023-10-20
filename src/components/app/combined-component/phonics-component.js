@@ -42,6 +42,7 @@ templatePhonicsComponent.innerHTML = `
 
           <!-- Three buttons underneath text box -->
           <div class="phonics-buttons">
+            <p>Click a button to learn about the phonetic spelling of the word.</p>
               <button type="button" id="consonantButton">Learn about the consonants</button>
               <button type="button" id="vowelButton">Learn about the vowels</button>
               <button type="button" id="combinedButton">See combined phonetic spelling</button>
@@ -71,11 +72,13 @@ export class PhonicsComponent extends HTMLElement {
     this.vowelButton = this.shadowRoot.querySelector('#vowelButton')
     this.combinedButton = this.shadowRoot.querySelector('#combinedButton')
     this.infoDiv = this.shadowRoot.querySelector('.phonics-info')
+    this.phonicsForm = this.shadowRoot.querySelector('.phonics-form') // Added this line
 
     // Bind event handlers to keep the correct context of 'this'
     this.insertConsonantComponent = this.insertConsonantComponent.bind(this)
     this.insertVowelComponent = this.insertVowelComponent.bind(this)
     this.insertCombinedComponent = this.insertCombinedComponent.bind(this)
+    this.handleFormSubmit = this.handleFormSubmit.bind(this) // Added this line
 
     this.swedishPhonicsChecker = new SwedishPhonicsChecker()
   }
@@ -87,6 +90,7 @@ export class PhonicsComponent extends HTMLElement {
     this.consonantButton.addEventListener('click', this.insertConsonantComponent)
     this.vowelButton.addEventListener('click', this.insertVowelComponent)
     this.combinedButton.addEventListener('click', this.insertCombinedComponent)
+    this.phonicsForm.addEventListener('submit', this.handleFormSubmit) // Added this line
   }
 
   /**
@@ -96,6 +100,17 @@ export class PhonicsComponent extends HTMLElement {
     this.consonantButton.removeEventListener('click', this.insertConsonantComponent)
     this.vowelButton.removeEventListener('click', this.insertVowelComponent)
     this.combinedButton.removeEventListener('click', this.insertCombinedComponent)
+    this.phonicsForm.removeEventListener('submit', this.handleFormSubmit) // Added this line
+  }
+
+  /**
+   * Handles the form submission.
+   *
+   * @param {event} event The event object.
+   */
+  handleFormSubmit (event) {
+    event.preventDefault() // Prevent the form from actually submitting and refreshing the page
+    this.insertCombinedComponent() // Display the combined phonetic spelling as a default
   }
 
   /**
@@ -139,7 +154,7 @@ export class PhonicsComponent extends HTMLElement {
     const consonantSpelling = this.swedishPhonicsChecker.phoneticConsonantSpelling(this.inputField.value)
     const vowelSpelling = this.swedishPhonicsChecker.phoneticVowelSpelling(consonantSpelling)
 
-    combinedDiv.innerHTML = `The phonetic spelling of ${this.inputField.value} is ${vowelSpelling}`
+    combinedDiv.innerHTML = `The phonetic spelling of ${this.inputField.value} is ${vowelSpelling}. If you are struggling to understand this, click the buttons for the consonant information or the button for the vowel information to learn more.`
     this.infoDiv.appendChild(combinedDiv)
   }
 
