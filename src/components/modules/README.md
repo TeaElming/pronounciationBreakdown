@@ -16,6 +16,7 @@ There are certain consonants that are not pronunced as one might expect: the 'g'
   - [Consonant sounds](#consonant-sounds)
   - [Vowel sounds](#vowel-sounds)
   - [Error handling](#error-handling)
+  - [License](#license)
 
 
 ## Access
@@ -68,3 +69,6 @@ There are currently several limitations to the modules ability to correctly iden
 
 ## Error handling
 There is currently no proper error handling implemented. There is a method available called catchTypeError(input) in the SwedishPhonicsChecker that is ready to be implemented. However, due to the nature of this method, which throws a TypeError if an incorrect argument is entered but does not catch it, this is something which should be improved.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.

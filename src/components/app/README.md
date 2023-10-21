@@ -9,6 +9,7 @@ The Swedish Phonics Checker app is an interactive component designed to help non
   - [Installation](#installation)
   - [Usage](#usage)
   - [Development](#development)
+  - [License](#license)
 
 
 ## Features
@@ -47,3 +48,5 @@ To contribute to the development or modification of this component, follow the s
 3.  Make your changes and **commit** them to your fork.
 4.  Create a **pull request** to the original repository for review.
 
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
