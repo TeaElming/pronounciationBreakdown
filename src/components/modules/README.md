@@ -5,10 +5,23 @@ The Swedish language has 9 vowels (A, E, I, O, U, Y, Å, Ä, Ö). This module ca
 
 There are certain consonants that are not pronunced as one might expect: the 'g' in 'gel' is not pronounced the same way as the 'g' in 'gul', and the words 'skar' and 'sker' have vastly different consonant sounds.
 
+## Table of Contents
+- [Swedish Phonics Checker - Module](#swedish-phonics-checker---module)
+  - [Table of Contents](#table-of-contents)
+  - [Access](#access)
+- [How to interact with the module](#how-to-interact-with-the-module)
+  - [Example outputs based on available methods](#example-outputs-based-on-available-methods)
+- [Testing](#testing)
+- [Open Issues](#open-issues)
+  - [Consonant sounds](#consonant-sounds)
+  - [Vowel sounds](#vowel-sounds)
+  - [Error handling](#error-handling)
+
+
 ## Access
 To find the file for the SwedishPhonicsChecker-module, press the link: [swedish-phonics-module.js](./swedish-phonics-module.js) . Please fork it to work on your own project.
 
-To find all files required for the SwedishPhonicsChecker-module, please click here: [modules-folder](../modules)
+To find all files required for the SwedishPhonicsChecker-module, please click here: [modules-folder](../modules) .
 
 # How to interact with the module
 Create a new instance of the class SwedishPhonicsIdentifier() and work with the following methods:
@@ -23,6 +36,7 @@ Create a new instance of the class SwedishPhonicsIdentifier() and work with the 
 
 ## Example outputs based on available methods
 ![View Example](./reports/testImageConsole.png)
+For examples of how to interact with the module, please see [test app](../../../test-app/test-each-method.js) .
 
 # Testing
 In terminal: **npm run test**
