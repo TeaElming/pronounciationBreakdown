@@ -18,6 +18,8 @@ The Swedish Phonics Checker app is an interactive component designed to help non
 * **Combined Phonetic Spelling:** See the combined phonetic spelling of the entire word.
 * **Support for Single Words:** Currently, the app supports phonetic consonant information for single words only.
 
+[See video of usage](/explanationVideo.mp4)
+
 ## Installation
 To use this app in your own project, follow these steps:
 1. Ensure that you have the necessary components and modules available in your project. This includes:

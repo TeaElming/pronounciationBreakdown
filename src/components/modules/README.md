@@ -68,4 +68,3 @@ There are currently several limitations to the modules ability to correctly iden
 
 ## Error handling
 There is currently no proper error handling implemented. There is a method available called catchTypeError(input) in the SwedishPhonicsChecker that is ready to be implemented. However, due to the nature of this method, which throws a TypeError if an incorrect argument is entered but does not catch it, this is something which should be improved.
-
