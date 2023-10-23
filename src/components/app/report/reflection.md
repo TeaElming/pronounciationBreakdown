@@ -35,8 +35,10 @@ The instantiation of the objects in the constructor allows a close relationship 
 As can be seen from these two example methods, the class interacts with the objects without exposing the internal structures.
 
 
-## Chapter 7: Error Handling TO DO BECAUSE I NEED MORE ERROR HANDLING
-HJ
+## Chapter 7: Error Handling
+As mentioned in Clean Code, it is better to avoid using return codes. This is why I have opted for throwing errors, including a message which clarifies what the problem is.
+![Code Example](./code-images/ch7.png)
+However, something I have not done, which is recommended in Clean Code, is to create Exception Classes that are specific to the code. The TypeError errors shown in the picture could have benefitted from being rewritten as a class specifically for Overriding Methods. In addition to that, the book prefers exceptions being thrown, which is something that my code could have utilised.
 
 
 ## Chapter 8: Boundaries
